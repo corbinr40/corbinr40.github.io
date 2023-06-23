@@ -7,212 +7,622 @@
     <title>corbinr40's Portfolio</title>
 
     <!-- For old IEs -->
-    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="shortcut icon" href="assets/favicon.ico" />
     
-    <!-- For new browsers multisize ico  -->
-    <link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="favicon.ico">
+    <!-- For new browsers - multisize ico  -->
+    <link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="assets/favicon.ico">
     
-    <!-- Chrome for Android -->
-    <link rel="icon" sizes="192x192" href="favicon-192.png">
+    <!-- For iPad with high-resolution Retina display running iOS ≥ 7: -->
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/favicon-152-precomposed.png">
     
-    <!-- For iPhone 6+ downscaled for other devices -->
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon-180-precomposed.png">
+    <!-- For iPad with high-resolution Retina display running iOS ≤ 6: -->
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/favicon-144-precomposed.png">
+    
+    <!-- For iPhone with high-resolution Retina display running iOS ≥ 7: -->
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/favicon-120-precomposed.png">
+    
+    <!-- For iPhone with high-resolution Retina display running iOS ≤ 6: -->
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/favicon-114-precomposed.png">
+    
+    <!-- For iPhone 6+ -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180-precomposed.png">
+    
+    <!-- For first- and second-generation iPad: -->
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/favicon-72-precomposed.png">
+    
+    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/favicon-57.png">
+    
+    <!-- For Old Chrome -->
+    <link rel="icon" sizes="32x32" href="assets/favicon-32.png">
     
     <!-- For IE10 Metro -->
     <meta name="msapplication-TileColor" content="#FFFFFF">
-    <meta name="msapplication-TileImage" content="favicon-114-precomposed.png">
+    <meta name="msapplication-TileImage" content="assets/favicon-144.png">
+    <meta name="theme-color" content="#ffffff">
+    
+    <!-- Chrome for Android -->
+    <link rel="manifest" href="assets/manifest.json">
+    <link rel="icon" sizes="192x192" href="assets/favicon-192.png">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
     </head>
 
 <body>
     <div class="container sticky-top">
-        <header
-            class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
-            <div class="col-md-3 mb-2 mb-md-0">
-                <a href="/" class="d-inline-flex link-body-emphasis text-decoration-none">
-                    <!-- <svg class="bi" width="40" height="32" role="img" aria-label="Bootstrap">
-                        <use xlink:href="#bootstrap"></use>
-                    </svg> -->
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+            <div class="col-md-0 mb-2 mb-md-0">
+                <a href="#" class="navbar-brand d-inline-flex link-body-emphasis text-decoration-none">
                     <span class="fs-4">corbinr40</span>
                 </a>
             </div>
-    
-            <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="#programs" class="nav-link px-2 link-secondary">Programs</a></li>
-                <li><a href="#games" class="nav-link px-2">Games</a></li>
-                <li><a href="#projects" class="nav-link px-2">Projects</a></li>
-                <li><a href="#tech" class="nav-link px-2">Tech</a></li>
-                <li><a href="#contact" class="nav-link px-2">Contact</a></li>
-            </ul>
-    
+
+            <!-- Floating Menu Buttons -->
+            <nav id="mainNavBar" class="navbar">
+                <div class="col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                    <ul class="nav nav-pills">
+                        <li class="nav-item"><a href="#programs" class="nav-link px-2">Programs</a></li>
+                        <li class="nav-item"><a href="#games" class="nav-link px-2">Games</a></li>
+                        <li class="nav-item"><a href="#projects" class="nav-link px-2">3D Projects</a></li>
+                        <!-- <li class="nav-item"><a href="#tech" class="nav-link px-2">Tech</a></li> -->
+                        <li class="nav-item"><a href="#contact" class="nav-link px-2">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Social Button Floating menu -->
             <div class="col-md-3 text-end">
-                <button class="btn btn-outline-primary rounded-circle p-2 lh-1" type="button">
+                <button class="btn btn-outline-primary rounded-circle p-2 lh-1" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="@corbinr40">
                     <i class="bi bi-twitter"></i>
                     <span class="visually-hidden">Dismiss</span>
                 </button>
-                <button class="btn btn-outline-primary rounded-circle p-2 lh-1" type="button">
+                <button class="btn btn-outline-primary rounded-circle p-2 lh-1" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="in/CorbinRichardson">
+                    <i class="bi bi-linkedin"></i>
+                    <span class="visually-hidden">Dismiss</span>
+                </button>
+                <button class="btn btn-outline-primary rounded-circle p-2 lh-1" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="@corbinr40_art">
+                    <i class="bi bi-instagram"></i>
+                    <span class="visually-hidden">Dismiss</span>
+                </button>
+                <button class="btn btn-outline-primary rounded-circle p-2 lh-1" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="">
                     <i class="bi bi-twitter"></i>
                     <span class="visually-hidden">Dismiss</span>
                 </button>
-                <button class="btn btn-outline-primary rounded-circle p-2 lh-1" type="button">
+                <button class="btn btn-outline-primary rounded-circle p-2 lh-1" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="">
                     <i class="bi bi-twitter"></i>
                     <span class="visually-hidden">Dismiss</span>
                 </button>
-                <button class="btn btn-outline-primary rounded-circle p-2 lh-1" type="button">
-                    <i class="bi bi-twitter"></i>
+                <button class="btn btn-outline-primary rounded-circle p-2 lh-1" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="/corbinr40">
+                    <i class="bi bi-github"></i>
                     <span class="visually-hidden">Dismiss</span>
                 </button>
                 <button class="btn btn-outline-primary rounded-circle p-2 lh-1" type="button">
-                    <i class="bi bi-twitter"></i>
-                    <span class="visually-hidden">Dismiss</span>
-                </button>
-                <button class="btn btn-outline-primary rounded-circle p-2 lh-1" type="button">
-                    <i class="bi bi-twitter"></i>
-                    <span class="visually-hidden">Dismiss</span>
-                </button>
-                <button class="btn btn-outline-primary rounded-circle p-2 lh-1" type="button">
-                    <i class="bi bi-twitter"></i>
+                    <i class="bi bi-envelope"></i>
                     <span class="visually-hidden">Dismiss</span>
                 </button>
             </div>
         </header>
     </div>
 
-    <div class="px-4 py-5 my-5 text-center">
-        <img class="d-block mx-auto mb-4" src="/assets/icon256.png" alt="" width="72" height="72">
-        <h1 class="display-5 fw-bold text-body-emphasis">Centered hero</h1>
-        <div class="col-lg-6 mx-auto">
-            <p class="lead mb-4">Quickly design and customize responsive mobile-first sites with Bootstrap, the world’s most
-                popular front-end open source toolkit, featuring Sass variables and mixins, responsive grid system,
-                extensive prebuilt components, and powerful JavaScript plugins.</p>
+    <!-- Page Main Body -->
+    <div data-bs-spy="scroll" data-bs-target="#mainNavBar" data-bs-offset="0" tabindex="0">
+        <!-- Main Center Information -->
+        <div class="px-4 py-5 my-5 text-center">
+            <img class="d-block mx-auto mb-4" src="/assets/icon256.png" alt="" width="72" height="72">
+            <h1 class="display-5 fw-bold text-body-emphasis">Welcome!</h1>
+            <div class="col-lg-6 mx-auto">
+                <p class="lead mb-4">Hi, I’m Corbin Richardson, and welcome to my site where I show off what I've done and what I'm currently doing.
+                    I’m a 1st Class Computer Science MEng Graduate from Leeds Beckett University.
+                    I can develop for desktop, mobile (using Mutli-Platform Frameworks), web design, and game development/design, whilst 3D
+                    modelling as a hobby.
+                    
+                    Regarding software development, I am proficient in Python, C#, Java, and Web Development (HTML, CSS, JavaScript). But, I’m
+                    always wanting to learn way more!
+
+                    
+                    For game dev/design I use both Unreal Engine and Unity. Unreal Engine is mainly used for personal projects and to show
+                    off some 3D models. I use Unity for nearly all game jams I participate in. When it comes to modelling there are
+                    many different aspects.
+                    
+                    To model I use Blender, for texturing, I use Adobe’s Substance Suite (Substance Painter, Substance Designer and Substance
+                    Sampler) and Krita.
+                </p>
+            </div>
+
+            <div class="skillSetIntro">
+                <!-- Skill Set -->
+                <h2><strong>Skill Set</strong></h2>
+                <div class="col-lg-8 mx-auto">
+                    <!-- <div class="row row-cols-1 row-cols-md-2 g-4"> -->
+                    <div class="row row-cols-1 row-cols-md-2 g-4">
+                            <div class="col card">
+                                <div class="card-body">
+                                    <h5>Languages</h5>
+                                    <p><span type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Python">Python</span>, 
+                                        <span type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="C#">C#</span>, 
+                                        <span type="button" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-original-title="Python">C++</span>, <br> Java, HTML, CSS, <br> JavaScript, and OpenCV</p>
+                                </div>
+                            </div>
+
+                            <div class="col card">
+                                <div class="card-body">
+                                    <h5>Frameworks</h5>
+                                    <p>React Native (JS and TS), <br> and Flutter (Dart)</p>
+                                </div>
+                            </div>
+
+                            <div class="col card">
+                                <div class="card-body">
+                                    <h5>Programs</h5>
+                                    <p>Blender, <br> Adobe’s Substance Suite <br> (Painter, Designer and Sampler),
+                                    <br> Krita, and ProCreate</p>
+                                </div>
+                            </div>
+                            
+                            <div class="col card">
+                                <div class="card-body">
+                                    <h5>Services</h5>
+                                    <p>AWS, Azure</p>
+                                </div>
+                            </div>
+
+                            <div class="col card">
+                                <div class="card-body">
+                                    <h5>Database</h5>
+                                    <p>MySQL SQLite</p>
+                                </div>
+                            </div>
+
+                            <div class="col card">
+                                <div class="card-body">
+                                    <h5>Operating Systems</h5>
+                                    <p>Windows, MacOS, and Linux</p>
+                                </div>
+                            </div>
+
+                            <div class="col card">
+                                <div class="card-body">
+                                    <h5>Game Engines</h5>
+                                    <p>Unity, and Unreal Engine</p>
+                                </div>
+                            </div>
+                            
+                            <div class="col card">
+                                <div class="card-body">
+                                    <h5>IDE’s</h5>
+                                    <p>Android Studio, Visual Studio, <br> Visual Studio Code, Eclipse, <br> and
+                                    Xcode</p>
+                                </div>
+                            </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="b-example-divider"></div>
+
+        <!-- Programs Section -->
+        <div class="container px-4 py-5" id="custom-cards">
+            <h2 id="programs" class="pb-2 border-bottom">Programs</h2>
+            <!-- Github -->
+            <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+                <div class="col">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                        style="background-image: url('unsplash-photo-1.jpg');">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">GitHub</h3>
+                            <p>All of my personal projects codes are stored on my GitHub account. 
+                                On this page you can see how my programs have been
+                                made, and add any additions you seem necessary.</p>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+                                    <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32"
+                                        class="rounded-circle border border-white">
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-box-arrow-up-right me-2"></i>
+                                    <small>External Link</small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bloss -->
+                <div class="col">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                        style="background-image: url('unsplash-photo-2.jpg');">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Bloss Coffee Development</h3>
+                            <p>Certain website features and elements developed specifically for &Bloss Coffee Shop in Ashford, Kent.</p>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+                                    <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32"
+                                        class="rounded-circle border border-white">
+                                </li>
+                                <li class="d-flex align-items-center me-3">
+                                    <i class="bi bi-geo-fill me-2"></i>
+                                    <small>External</small>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-code-square me-2"></i>
+                                    <small>HTML/CSS/JS</small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RTCC -->
+                <div class="col">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                        style="background-image: url('unsplash-photo-3.jpg');">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">RTCC - Real Time Communication Captions</h3>
+                            <p>A piece of software that converts voice to text in a visual output, as an aid to individuals who are hard of hearing.
+                            The plan is to deliver this via a piece of hardware in the form of glasses with a heads up display.</p>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+                                    <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32"
+                                        class="rounded-circle border border-white">
+                                </li>
+                                <li class="d-flex align-items-center me-3">
+                                    <i class="bi bi-geo-fill me-2"></i>
+                                    <small>University</small>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-code-square me-2"></i>
+                                    <small>Python</small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lets Play -->
+                <div class="col">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                        style="background-image: url('unsplash-photo-2.jpg');">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Lets Play</h3>
+                            <p>Mobile and Web App to help users find what games are available on what platforms, subscription services, and their
+                            prices all in one place. Developed using Native.</p>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+                                    <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32"
+                                        class="rounded-circle border border-white">
+                                </li>
+                                <li class="d-flex align-items-center me-3">
+                                    <i class="bi bi-geo-fill me-2"></i>
+                                    <small>Personal</small>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-code-square me-2"></i>
+                                    <small>React Native/TS</small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PS XBox Scraper -->
+                <div class="col">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                        style="background-image: url('unsplash-photo-2.jpg');">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">PS and Xbox Web Scraper</h3>
+                            <p>A Python 3 program using selenium to extract game information (Name, Price, Description and Image) from both the Xbox
+                            and PlayStation Store.</p>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+                                    <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32"
+                                        class="rounded-circle border border-white">
+                                </li>
+                                <li class="d-flex align-items-center me-3">
+                                    <i class="bi bi-geo-fill me-2"></i>
+                                    <small>Personal</small>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-code-square me-2"></i>
+                                    <small>Python/Selenium</small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Games Section -->
+        <div class="container px-4 py-5" id="custom-cards">
+            <h2 id="games" class="pb-2 border-bottom">Games</h2>
+            <!-- Item 1 -->
+            <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+                <div class="col">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                        style="background-image: url('unsplash-photo-1.jpg');">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"></h3>
+                            <p></p>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+                                    <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32"
+                                        class="rounded-circle border border-white">
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-box-arrow-up-right me-2"></i>
+                                    <small>External Link</small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Item 2 -->
+                <div class="col">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                        style="background-image: url('unsplash-photo-2.jpg');">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"></h3>
+                            <p></p>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+                                    <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32"
+                                        class="rounded-circle border border-white">
+                                </li>
+                                <li class="d-flex align-items-center me-3">
+                                    <i class="bi bi-geo-fill me-2"></i>
+                                    <small></small>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-code-square me-2"></i>
+                                    <small></small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Item 3 -->
+                <div class="col">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                        style="background-image: url('unsplash-photo-3.jpg');">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"></h3>
+                            <p></p>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+                                    <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32"
+                                        class="rounded-circle border border-white">
+                                </li>
+                                <li class="d-flex align-items-center me-3">
+                                    <i class="bi bi-geo-fill me-2"></i>
+                                    <small></small>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-code-square me-2"></i>
+                                    <small></small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Item 4 -->
+                <div class="col">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                        style="background-image: url('unsplash-photo-2.jpg');">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"></h3>
+                            <p></p>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+                                    <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32"
+                                        class="rounded-circle border border-white">
+                                </li>
+                                <li class="d-flex align-items-center me-3">
+                                    <i class="bi bi-geo-fill me-2"></i>
+                                    <small></small>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-code-square me-2"></i>
+                                    <small></small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Item 5 -->
+                <div class="col">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                        style="background-image: url('unsplash-photo-2.jpg');">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"></h3>
+                            <p></p>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+                                    <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32"
+                                        class="rounded-circle border border-white">
+                                </li>
+                                <li class="d-flex align-items-center me-3">
+                                    <i class="bi bi-geo-fill me-2"></i>
+                                    <small></small>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-code-square me-2"></i>
+                                    <small></small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        
+            </div>
+        </div>
+
+        <!-- 3D Projects Section -->
+        <div class="container px-4 py-5" id="custom-cards">
+            <h2 id="projects" class="pb-2 border-bottom">3D Projects</h2>
+            <!-- Item 1 -->
+            <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+                <div class="col">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                        style="background-image: url('unsplash-photo-1.jpg');">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"></h3>
+                            <p></p>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+                                    <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32"
+                                        class="rounded-circle border border-white">
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-box-arrow-up-right me-2"></i>
+                                    <small>External Link</small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Item 2 -->
+                <div class="col">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                        style="background-image: url('unsplash-photo-2.jpg');">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"></h3>
+                            <p></p>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+                                    <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32"
+                                        class="rounded-circle border border-white">
+                                </li>
+                                <li class="d-flex align-items-center me-3">
+                                    <i class="bi bi-geo-fill me-2"></i>
+                                    <small></small>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-code-square me-2"></i>
+                                    <small></small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Item 3 -->
+                <div class="col">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                        style="background-image: url('unsplash-photo-3.jpg');">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"></h3>
+                            <p></p>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+                                    <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32"
+                                        class="rounded-circle border border-white">
+                                </li>
+                                <li class="d-flex align-items-center me-3">
+                                    <i class="bi bi-geo-fill me-2"></i>
+                                    <small></small>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-code-square me-2"></i>
+                                    <small></small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Item 4 -->
+                <div class="col">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                        style="background-image: url('unsplash-photo-2.jpg');">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"></h3>
+                            <p></p>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+                                    <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32"
+                                        class="rounded-circle border border-white">
+                                </li>
+                                <li class="d-flex align-items-center me-3">
+                                    <i class="bi bi-geo-fill me-2"></i>
+                                    <small></small>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-code-square me-2"></i>
+                                    <small></small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Item 5 -->
+                <div class="col">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                        style="background-image: url('unsplash-photo-2.jpg');">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold"></h3>
+                            <p></p>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+                                    <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32"
+                                        class="rounded-circle border border-white">
+                                </li>
+                                <li class="d-flex align-items-center me-3">
+                                    <i class="bi bi-geo-fill me-2"></i>
+                                    <small></small>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-code-square me-2"></i>
+                                    <small></small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+        
+            </div>
         </div>
     </div>
 
-    <div class="b-example-divider"></div>
-
-    <div class="container px-4 py-5" id="custom-cards">
-        <h2 id="programs" class="pb-2 border-bottom">Programs</h2>
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <p class="col-md-4 mb-0 text-body-secondary">corbinr40</p>
     
-        <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
-            <div class="col">
-                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
-                    style="background-image: url('unsplash-photo-1.jpg');">
-                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                        <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Short title, long jacket</h3>
-                        <ul class="d-flex list-unstyled mt-auto">
-                            <li class="me-auto">
-                                <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32"
-                                    class="rounded-circle border border-white">
-                            </li>
-                            <li class="d-flex align-items-center me-3">
-                                <svg class="bi me-2" width="1em" height="1em">
-                                    <use xlink:href="#geo-fill"></use>
-                                </svg>
-                                <small>Earth</small>
-                            </li>
-                            <li class="d-flex align-items-center">
-                                <svg class="bi me-2" width="1em" height="1em">
-                                    <use xlink:href="#calendar3"></use>
-                                </svg>
-                                <small>3d</small>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            <a href="/"
+                class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                <img class="rounded-circle d-block mx-auto mb-4" src="/assets/icon256.png" alt="" width="52" height="52">
+            </a>
     
-            <div class="col">
-                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
-                    style="background-image: url('unsplash-photo-2.jpg');">
-                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                        <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Much longer title that wraps to multiple lines
-                        </h3>
-                        <ul class="d-flex list-unstyled mt-auto">
-                            <li class="me-auto">
-                                <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32"
-                                    class="rounded-circle border border-white">
-                            </li>
-                            <li class="d-flex align-items-center me-3">
-                                <svg class="bi me-2" width="1em" height="1em">
-                                    <use xlink:href="#geo-fill"></use>
-                                </svg>
-                                <small>Pakistan</small>
-                            </li>
-                            <li class="d-flex align-items-center">
-                                <svg class="bi me-2" width="1em" height="1em">
-                                    <use xlink:href="#calendar3"></use>
-                                </svg>
-                                <small>4d</small>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="col">
-                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
-                    style="background-image: url('unsplash-photo-3.jpg');">
-                    <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
-                        <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Another longer title belongs here</h3>
-                        <ul class="d-flex list-unstyled mt-auto">
-                            <li class="me-auto">
-                                <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32"
-                                    class="rounded-circle border border-white">
-                            </li>
-                            <li class="d-flex align-items-center me-3">
-                                <svg class="bi me-2" width="1em" height="1em">
-                                    <use xlink:href="#geo-fill"></use>
-                                </svg>
-                                <small>California</small>
-                            </li>
-                            <li class="d-flex align-items-center">
-                                <svg class="bi me-2" width="1em" height="1em">
-                                    <use xlink:href="#calendar3"></use>
-                                </svg>
-                                <small>5d</small>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
-                    style="background-image: url('unsplash-photo-2.jpg');">
-                    <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                        <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Much longer title that wraps to multiple lines
-                        </h3>
-                        <ul class="d-flex list-unstyled mt-auto">
-                            <li class="me-auto">
-                                <img src="https://github.com/twbs.png" alt="Bootstrap" width="32" height="32"
-                                    class="rounded-circle border border-white">
-                            </li>
-                            <li class="d-flex align-items-center me-3">
-                                <svg class="bi me-2" width="1em" height="1em">
-                                    <use xlink:href="#geo-fill"></use>
-                                </svg>
-                                <small>Pakistan</small>
-                            </li>
-                            <li class="d-flex align-items-center">
-                                <svg class="bi me-2" width="1em" height="1em">
-                                    <use xlink:href="#calendar3"></use>
-                                </svg>
-                                <small>4d</small>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-        </div>
+            <ul class="nav col-md-4 justify-content-end">
+                <li class="nav-item"><a href="#programs" class="nav-link px-2 text-body-secondary">Programs</a></li>
+                <li class="nav-item"><a href="#games" class="nav-link px-2 text-body-secondary">Games</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link px-2 text-body-secondary">3D Projects</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Contact</a></li>
+            </ul>
+        </footer>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
+
+    <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    </script>
 </body>
 
 </html>
