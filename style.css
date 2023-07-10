@@ -1,3 +1,9 @@
 .socialColour{
     filter: invert(10%) sepia(86%) saturate(5633%) hue-rotate(245deg) brightness(93%) contrast(155%);
 }
+
+@include media-breakpoint-up(sm) {
+    .socialButtons {
+        display: break;
+    }
+}
