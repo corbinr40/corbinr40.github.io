@@ -7,3 +7,52 @@
         display: break;
     }
 }
+
+path {
+    fill: #212529;
+}
+
+path:hover {
+    fill: #6C757D;
+}
+
+a:link, a:visited, a:hover a:active {
+    color: #212529;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #6C757D;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.btn-outline-primary{
+    color: #212529 !important;
+    --bs-btn-border-color: #212529 !important;
+    --bs-btn-hover-border-color: #6C757D !important;
+    background-color: transparent !important;
+    text-decoration: none !important;
+}
+
+:root {
+    color: #212529 !important;
+    --bs-link-color: #212529 !important;
+    --bs-link-hover-color: #6C757D !important;
+    background-color: transparent !important;
+    text-decoration: none !important;
+}
+
+
+button:link, button:visited, button:active {
+    color: #212529 !important;
+    background-color: transparent !important;
+    text-decoration: none !important;
+}
+
+button:hover {
+    color: #6C757D !important;
+    background-color: transparent !important;
+    text-decoration: none !important;
+}
