@@ -1,0 +1,720 @@
+<!doctype html>
+<html lang="en">
+
+<style>
+    .filterDiv {
+        display: none;
+    }
+
+    .show {
+        display: block;
+    }
+</style>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>corbinr40's Projects</title>
+
+    <!-- For old IEs -->
+    <link rel="shortcut icon" href="assets/favicon.ico" />
+    
+    <!-- For new browsers - multisize ico  -->
+    <link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="assets/favicon.ico">
+    
+    <!-- For iPad with high-resolution Retina display running iOS ≥ 7: -->
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/favicon-152-precomposed.png">
+    
+    <!-- For iPad with high-resolution Retina display running iOS ≤ 6: -->
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/favicon-144-precomposed.png">
+    
+    <!-- For iPhone with high-resolution Retina display running iOS ≥ 7: -->
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/favicon-120-precomposed.png">
+    
+    <!-- For iPhone with high-resolution Retina display running iOS ≤ 6: -->
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/favicon-114-precomposed.png">
+    
+    <!-- For iPhone 6+ -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180-precomposed.png">
+    
+    <!-- For first- and second-generation iPad: -->
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/favicon-72-precomposed.png">
+    
+    <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/favicon-57.png">
+    
+    <!-- For Old Chrome -->
+    <link rel="icon" sizes="32x32" href="assets/favicon-32.png">
+    
+    <!-- For IE10 Metro -->
+    <meta name="msapplication-TileColor" content="#FFFFFF">
+    <meta name="msapplication-TileImage" content="assets/favicon-144.png">
+    <meta name="theme-color" content="#ffffff">
+    
+    <!-- Chrome for Android -->
+    <link rel="manifest" href="assets/manifest.json">
+    <link rel="icon" sizes="192x192" href="assets/favicon-192.png">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container sticky-top" style="background-color: white">
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+            <div class="col-md-0 mb-2 mb-md-0">
+                <a href="/index.html" class="navbar-brand d-inline-flex link-body-emphasis text-decoration-none">
+                    <span class="fs-4">corbinr40</span>
+                </a>
+            </div>
+
+            <button class="navbar-toggler navbar navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Floating Menu Buttons -->
+            <nav id="mainNavBar" class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <div class="d-flex col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                            <ul class="nav nav-pills">
+                                <li class="nav-item"><a href="/index.html#programs" class="nav-link px-2">Programs</a></li>
+                                <li class="nav-item"><a href="/index.html#games" class="nav-link px-2">Games</a></li>
+                                <li class="nav-item"><a href="/index.html#projects" class="nav-link px-2">3D Projects</a></li>
+                                <!-- <li class="nav-item"><a href="#tech" class="nav-link px-2">Tech</a></li> -->
+                                <li class="nav-item"><a href="/index.html#contact" class="nav-link px-2">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <nav id="mainNavBar" class="navbar navbar-expand-lg">
+                <div class="container-fluid">
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <!-- Social Button Floating menu -->
+                        <div class="socialButtons d-flex text-end justify-content-end">
+                            <button class="btn btn-outline-primary rounded-circle p-2 lh-1" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="@corbinr40" onclick="window.location.href='https://www.twitter.com/corbinr40';">
+                                <i class="bi bi-twitter"></i>
+                                <span class="visually-hidden">Dismiss</span>
+                            </button>
+                            <button class="btn btn-outline-primary rounded-circle p-2 lh-1" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="in/CorbinRichardson" onclick="window.location.href='https://www.linkedin.com/in/CorbinRichardson';">
+                                <i class="bi bi-linkedin"></i>
+                                <span class="visually-hidden">Dismiss</span>
+                            </button>
+                            <button class="btn btn-outline-primary rounded-circle p-2 lh-1" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="@corbinr40_art" onclick="window.location.href='https://www.instagram.com/corbinr40_art';">
+                                <i class="bi bi-instagram"></i>
+                                <span class="visually-hidden">Dismiss</span>
+                            </button>
+                            <button class="btn btn-outline-primary rounded-circle p-2 lh-1" type="button" data-bs-toggle="tooltip"
+                                data-bs-placement="bottom" data-bs-original-title="corbinr40"
+                                onclick="window.location.href='https://www.sketchfab.com/corbinr40';">
+                                <!-- <img src="/assets/externalLinkLogo/sketchfab-logo-black.svg" width="16" height="14"> -->
+                                <svg viewBox="0 0 2000 2000" xmlns="http://www.w3.org/2000/svg" height="14" width="16">
+                                    <path
+                                        d="m1000 0c-552.32 0-1000 447.72-1000 1000s447.68 1000 1000 1000 1000-447.72 1000-1000-447.6-1000-1000-1000zm-86.88 1595.07-431.12-248.86v-502l431.12 232.79zm76.8-636.19-510.08-270.38 510.08-294.5 510.16 294.5zm510.48 388.29-429.52 248v-516.17l429.52-232z" />
+                                </svg>
+                                <span class="visually-hidden">Dismiss</span>
+                            </button>
+                            <button class="btn btn-outline-primary rounded-circle p-2 lh-1" type="button" data-bs-toggle="tooltip"
+                                data-bs-placement="bottom" data-bs-original-title="corbinr40.itch.io"
+                                onclick="window.location.href='https://corbinr40.itch.io';">
+                                <!-- <img src="/assets/externalLinkLogo/itchio-logo-textless-black.svg" width="16" height="14"> -->
+                                <svg xmlns="http://www.w3.org/2000/svg" height="14" width="16" viewBox="0 0 245.371 220.736">
+                                    <path
+                                        d="M31.99 1.365C21.287 7.72.2 31.945 0 38.298v10.516C0 62.144 12.46 73.86 23.773 73.86c13.584 0 24.902-11.258 24.903-24.62 0 13.362 10.93 24.62 24.515 24.62 13.586 0 24.165-11.258 24.165-24.62 0 13.362 11.622 24.62 25.207 24.62h.246c13.586 0 25.208-11.258 25.208-24.62 0 13.362 10.58 24.62 24.164 24.62 13.585 0 24.515-11.258 24.515-24.62 0 13.362 11.32 24.62 24.903 24.62 11.313 0 23.773-11.714 23.773-25.046V38.298c-.2-6.354-21.287-30.58-31.988-36.933C180.118.197 157.056-.005 122.685 0c-34.37.003-81.228.54-90.697 1.365zm65.194 66.217a28.025 28.025 0 0 1-4.78 6.155c-5.128 5.014-12.157 8.122-19.906 8.122a28.482 28.482 0 0 1-19.948-8.126c-1.858-1.82-3.27-3.766-4.563-6.032l-.006.004c-1.292 2.27-3.092 4.215-4.954 6.037a28.5 28.5 0 0 1-19.948 8.12c-.934 0-1.906-.258-2.692-.528-1.092 11.372-1.553 22.24-1.716 30.164l-.002.045c-.02 4.024-.04 7.333-.06 11.93.21 23.86-2.363 77.334 10.52 90.473 19.964 4.655 56.7 6.775 93.555 6.788h.006c36.854-.013 73.59-2.133 93.554-6.788 12.883-13.14 10.31-66.614 10.52-90.474-.022-4.596-.04-7.905-.06-11.93l-.003-.045c-.162-7.926-.623-18.793-1.715-30.165-.786.27-1.757.528-2.692.528a28.5 28.5 0 0 1-19.948-8.12c-1.862-1.822-3.662-3.766-4.955-6.037l-.006-.004c-1.294 2.266-2.705 4.213-4.563 6.032a28.48 28.48 0 0 1-19.947 8.125c-7.748 0-14.778-3.11-19.906-8.123a28.025 28.025 0 0 1-4.78-6.155 27.99 27.99 0 0 1-4.736 6.155 28.49 28.49 0 0 1-19.95 8.124c-.27 0-.54-.012-.81-.02h-.007c-.27.008-.54.02-.813.02a28.49 28.49 0 0 1-19.95-8.123 27.992 27.992 0 0 1-4.736-6.155zm-20.486 26.49l-.002.01h.015c8.113.017 15.32 0 24.25 9.746 7.028-.737 14.372-1.105 21.722-1.094h.006c7.35-.01 14.694.357 21.723 1.094 8.93-9.747 16.137-9.73 24.25-9.746h.014l-.002-.01c3.833 0 19.166 0 29.85 30.007L210 165.244c8.504 30.624-2.723 31.373-16.727 31.4-20.768-.773-32.267-15.855-32.267-30.935-11.496 1.884-24.907 2.826-38.318 2.827h-.006c-13.412 0-26.823-.943-38.318-2.827 0 15.08-11.5 30.162-32.267 30.935-14.004-.027-25.23-.775-16.726-31.4L46.85 124.08C57.534 94.073 72.867 94.073 76.7 94.073zm45.985 23.582v.006c-.02.02-21.863 20.08-25.79 27.215l14.304-.573v12.474c0 .584 5.74.346 11.486.08h.006c5.744.266 11.485.504 11.485-.08v-12.474l14.304.573c-3.928-7.135-25.79-27.215-25.79-27.215v-.006l-.003.002z" />
+                                </svg>
+                                <span class="visually-hidden">Dismiss</span>
+                            </button>
+                            <button class="btn btn-outline-primary rounded-circle p-2 lh-1" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="/corbinr40" onclick="window.location.href='https://www.github.com/corbinr40';">
+                                <i class="bi bi-github"></i>
+                                <span class="visually-hidden">Dismiss</span>
+                            </button>
+                            <button class="btn btn-outline-primary rounded-circle p-2 lh-1" type="button">
+                                <i class="bi bi-envelope"></i>
+                                <span class="visually-hidden">Dismiss</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    </div>
+
+    <!-- Page Main Body -->
+    <div data-bs-spy="scroll" data-bs-target="#mainNavBar" data-bs-offset="0" tabindex="0">
+
+        <!-- Filter Section Section -->
+        <div class="container" id="custom-cards">
+            <h2 class="border-bottom">Filters</h2>
+            <div class="col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+            <!-- <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5"> -->
+                <h3 class="border-bottom py-3">Development Type</h3>
+                <div id="filterButtonContainer">
+                    <button type="button" class="btn btn-primary me-md-2 filterButton active" onclick="filterSelection('all')">Show All</button>
+                    <button type="button" class="btn btn-primary me-md-2 filterButton" onclick="filterSelection('extLink')">External Links</button>
+                    <button type="button" class="btn btn-primary me-md-2 filterButton" onclick="filterSelection('personal')">Personal Projects</button>
+                    <button type="button" class="btn btn-primary me-md-2 filterButton" onclick="filterSelection('industry')">Industry Projects</button>
+                    <button type="button" class="btn btn-primary me-md-2 filterButton" onclick="filterSelection('jam')">Game Jam</button>
+                </div>
+
+                <h3 class="border-bottom py-3">Project Type</h3>
+                <div id="filterButtonContainer">
+                    <button type="button" class="btn btn-primary me-md-2 filterButton" onclick="filterSelection('programs')">Programs</button>
+                    <button type="button" class="btn btn-primary me-md-2 filterButton" onclick="filterSelection('games')">Games</button>
+                    <button type="button" class="btn btn-primary me-md-2 filterButton" onclick="filterSelection('projects')">3D Projects</button>
+                </div>
+
+                <h3 class="border-bottom py-3">Skillset</h3>
+                <div id="filterButtonContainer">
+                    <button type="button" class="btn btn-primary me-md-2 filterButton" onclick="filterSelection('html')">HTML</button>
+                    <button type="button" class="btn btn-primary me-md-2 filterButton" onclick="filterSelection('css')">CSS</button>
+                    <button type="button" class="btn btn-primary me-md-2 filterButton" onclick="filterSelection('js')">JavaScript</button>
+                    <button type="button" class="btn btn-primary me-md-2 filterButton" onclick="filterSelection('python')">Python</button>
+                    <button type="button" class="btn btn-primary me-md-2 filterButton" onclick="filterSelection('selenium')">Selenium</button>
+                    <button type="button" class="btn btn-primary me-md-2 filterButton" onclick="filterSelection('react')">React Native</button>
+                    <button type="button" class="btn btn-primary me-md-2 filterButton" onclick="filterSelection('ts')">Type Script</button>
+                    <button type="button" class="btn btn-primary me-md-2 filterButton" onclick="filterSelection('unity')">Unity</button>
+                    <button type="button" class="btn btn-primary me-md-2 filterButton" onclick="filterSelection('csharp')">C#</button>
+                    <button type="button" class="btn btn-primary me-md-2 filterButton" onclick="filterSelection('ue')">Unreal Engine</button>
+                    <button type="button" class="btn btn-primary me-md-2 filterButton" onclick="filterSelection('blender')">Blender</button>
+                    <button type="button" class="btn btn-primary me-md-2 filterButton" onclick="filterSelection('substance')">Adobe Substance Suite</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Items -->
+        <div class="container px-4 py-5" id="custom-cards">
+            <h2 class="border-bottom"></h2>
+            <!-- Github -->
+            <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+                <div class="col filterDiv extLink programs">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                        style="background-image: url('unsplash-photo-1.jpg');" onclick="window.open('https://github.com/corbinr40');">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">GitHub</h3>
+                            <p>All of my personal projects codes are stored on my GitHub account. 
+                                On this page you can see how my programs have been
+                                made, and add any additions you seem necessary.</p>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+                                    <i class="bi bi-file-code me-2"></i>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-box-arrow-up-right me-2"></i>
+                                    <small>External Link</small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bloss -->
+                <div class="col filterDiv programs industry html css js">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                        style="background-image: url('unsplash-photo-2.jpg');" onclick="window.location.href='projects\\bloss.html'">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Bloss Coffee Development</h3>
+                            <p>Certain website features and elements developed specifically for &Bloss Coffee Shop in Ashford, Kent.</p>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+                                    <i class="bi bi-file-code me-2"></i>
+                                </li>
+                                <li class="d-flex align-items-center me-3">
+                                    <i class="bi bi-geo-fill me-2"></i>
+                                    <small>External</small>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-code-square me-2"></i>
+                                    <small>HTML/CSS/JS</small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RTCC -->
+                <div class="col filterDiv programs university python">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                        style="background-image: url('unsplash-photo-3.jpg');" onclick="window.location.href='projects\\rtcc.html'">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">RTCC - Real Time Communication Captions</h3>
+                            <p>A piece of software that converts voice to text in a visual output, as an aid to individuals who are hard of hearing.
+                            The plan is to deliver this via a piece of hardware in the form of glasses with a heads up display.</p>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+                                    <i class="bi bi-file-code me-2"></i>
+                                </li>
+                                <li class="d-flex align-items-center me-3">
+                                    <i class="bi bi-geo-fill me-2"></i>
+                                    <small>University</small>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-code-square me-2"></i>
+                                    <small>Python</small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Lets Play -->
+                <div class="col filterDiv programs personal react ts">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                        style="background-image: url('unsplash-photo-2.jpg');" onclick="window.location.href='projects\\LetsPlay.html'">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Lets Play</h3>
+                            <p>Mobile and Web App to help users find what games are available on what platforms, subscription services, and their
+                            prices all in one place. Developed using Native.</p>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+                                    <i class="bi bi-file-code me-2"></i>
+                                </li>
+                                <li class="d-flex align-items-center me-3">
+                                    <i class="bi bi-geo-fill me-2"></i>
+                                    <small>Personal</small>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-code-square me-2"></i>
+                                    <small>React Native/TS</small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PS XBox Scraper -->
+                <div class="col filterDiv programs personal python selenium">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                        style="background-image: url('unsplash-photo-2.jpg');" onclick="window.location.href='projects\\scraper.html'">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">PS and Xbox Web Scraper</h3>
+                            <p>A Python 3 program using selenium to extract game information (Name, Price, Description and Image) from both the Xbox
+                            and PlayStation Store.</p>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+                                    <i class="bi bi-file-code me-2"></i>
+                                </li>
+                                <li class="d-flex align-items-center me-3">
+                                    <i class="bi bi-geo-fill me-2"></i>
+                                    <small>Personal</small>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-code-square me-2"></i>
+                                    <small>Python/Selenium</small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col filterDiv games extLink">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                        style="background-image: url('unsplash-photo-1.jpg');" onclick="window.open('https://corbinr40.itch.io');">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Itch.io</h3>
+                            <p>Want to try out any of the games I’ve made? Chances are they will be on my Itch.io page. Click the button
+                                below to be
+                                directed to my custom Itch.io page!</p>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+                                    <i class="bi bi-joystick me-2"></i>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-box-arrow-up-right me-2"></i>
+                                    <small>External Link</small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Dice Roll -->
+                <div class="col filterDiv games personal unity csharp">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                        style="background-image: url('unsplash-photo-2.jpg');" onclick="window.location.href='projects\\DiceRoll.html'">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Dice Roll</h3>
+                            <p>Dice. Maths. Rolling. What more could you want?
+                                Here is a casual game where you have to equal a randomly chosen number using the sum of a dice roll.
+                                Created using Unity
+                                and C# for Android and iOS devices.</p>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+                                    <i class="bi bi-joystick me-2"></i>
+                                </li>
+                                <li class="d-flex align-items-center me-3">
+                                    <i class="bi bi-geo-fill me-2"></i>
+                                    <small>Personal (WIP)</small>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-code-square me-2"></i>
+                                    <small>Unity/C#</small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Shopper - VR -->
+                <div class="col filterDiv games personal unity csharp">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                        style="background-image: url('unsplash-photo-3.jpg');"
+                        onclick="window.location.href='projects\\ShopperVR.html'">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Shopper - VR</h3>
+                            <p>A casual, or as casual as it can get, shopping experience on the Meta Quest.
+                
+                                Pick up your weekly shop by going though a virtual environment, and you might bump into someone you
+                                know! Built using
+                                Unity Android SDK for Meta Quest 2.</p>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+                                    <i class="bi bi-joystick me-2"></i>
+                                </li>
+                                <li class="d-flex align-items-center me-3">
+                                    <i class="bi bi-geo-fill me-2"></i>
+                                    <small>Personal (WIP)</small>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-code-square me-2"></i>
+                                    <small>Unity/C#</small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Train Loop -->
+                <div class="col filterDiv games personal ue">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                        style="background-image: url('unsplash-photo-2.jpg');"
+                        onclick="window.location.href='projects\\TrainLoop.html'">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Train Loop</h3>
+                            <p>Stuck in a constant loop on a train that’s destined to not make it’s final stop.
+                
+                                Talk to passengers on the train to find information out about them, and maybe uncover the mystery. Aim
+                                to change the
+                                future about learning their past. Created using Unreal Engine 5 and their Blueprints.</p>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+                                    <i class="bi bi-joystick me-2"></i>
+                                </li>
+                                <li class="d-flex align-items-center me-3">
+                                    <i class="bi bi-geo-fill me-2"></i>
+                                    <small>Personal (WIP)</small>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-code-square me-2"></i>
+                                    <small>Unreal Engine 5/Blueprints</small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Infinite Diver -->
+                <div class="col filterDiv games jam personal unity csharp">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                        style="background-image: url('unsplash-photo-2.jpg');"
+                        onclick="window.location.href='projects\\InfiniteDiver.html'">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Infinite Diver</h3>
+                            <p>Made for Junior Developers’ week long Game Jam. With the theme being “Underwater”, a diving game was
+                                made.
+                
+                                Was it good? No. Did I have fun and learn a load? Yes. Would I do it again? Yes, but better! Created
+                                using Unity and C#.</p>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+                                    <i class="bi bi-joystick me-2"></i>
+                                </li>
+                                <li class="d-flex align-items-center me-3">
+                                    <i class="bi bi-geo-fill me-2"></i>
+                                    <small>Game Jam</small>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-code-square me-2"></i>
+                                    <small>Unity/C#</small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Word Battle Royale -->
+                <div class="col filterDiv personal jam games unity csharp">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                        style="background-image: url('unsplash-photo-2.jpg');"
+                        onclick="window.location.href='projects\\WordBattleRoyale.html'">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Word Battle Royale</h3>
+                            <p>An unsuccessfully completed Game Jam submission where up to 9 players compete against each other in a
+                                touch typing
+                                battle royal game. The theme of the Jam was “Genre Mash”. Each player will have to fill up a progress
+                                bar and can use
+                                powerup to disadvantage the competitors. As the game goes on, the words will get progressively more
+                                difficult.</p>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+                                    <i class="bi bi-joystick me-2"></i>
+                                </li>
+                                <li class="d-flex align-items-center me-3">
+                                    <i class="bi bi-geo-fill me-2"></i>
+                                    <small>Game Jam</small>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-code-square me-2"></i>
+                                    <small>Unity/C#</small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Liminal Space -->
+                <div class="col filterDiv jam games personal ue">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                        style="background-image: url('unsplash-photo-2.jpg');"
+                        onclick="window.location.href='projects\\LiminalSpace.html'">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Liminal Space</h3>
+                            <p>Made for Brackeys Game Jam 2022.1 week long jam. The theme was “This is not real”
+                
+                                As Liminal Space and “the backrooms” were in my mind, a game where you’ve woken in an old school with a
+                                creature
+                                lurking… somewhere. Created using Unreal Engine 4 and their Blueprints.</p>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+                                    <i class="bi bi-joystick me-2"></i>
+                                </li>
+                                <li class="d-flex align-items-center me-3">
+                                    <i class="bi bi-geo-fill me-2"></i>
+                                    <small>Game Jam</small>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-code-square me-2"></i>
+                                    <small>Unreal Engine 4/Blueprints</small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col filterDiv extLink">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                        style="background-image: url('unsplash-photo-1.jpg');"
+                        onclick="window.open('https://sketchfab.com/corbinr40');">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">SketchFab</h3>
+                            <p>It all begins with an idea. Maybe you want to launch a business. Maybe you want to turn a hobby into
+                                something more.</p>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+                                    <i class="bi bi-brush me-2"></i>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-box-arrow-up-right me-2"></i>
+                                    <small>External Link</small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Bob's Burgers -->
+                <div class="col filterDiv projects personal blender substance">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                        style="background-image: url('unsplash-photo-2.jpg');"
+                        onclick="window.location.href='projects\\BobsBurgers.html'">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Bob's Burgers</h3>
+                            <p>The restaurant from Fox’s animated sitcom tv show Bob’s Burgers, created by Loren Bouchard. Created in
+                                Blender and
+                                textured using the Adobe Substance Suite.</p>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+                                    <i class="bi bi-brush me-2"></i>
+                                </li>
+                                <li class="d-flex align-items-center me-3">
+                                    <i class="bi bi-geo-fill me-2"></i>
+                                    <small>Personal</small>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-code-square me-2"></i>
+                                    <small>Blender/Adobe Substance Suite</small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Moe's Tavern -->
+                <div class="col filterDiv projects personal blender">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                        style="background-image: url('unsplash-photo-3.jpg');"
+                        onclick="window.location.href='projects\\MoesTavern.html'">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
+                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Moe's Tavern</h3>
+                            <p>The local tavern of Springfield, USA owned by Moe Szyslak and the most likely place to find Homer
+                                Simpsons. From Fox’s
+                                hit animated tv sitcom, The Simpsons created by Matt Groening. This model was created in Blender and
+                                rendered using
+                                Blender Cycles rendering engine.</p>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+                                    <i class="bi bi-brush me-2"></i>
+                                </li>
+                                <li class="d-flex align-items-center me-3">
+                                    <i class="bi bi-geo-fill me-2"></i>
+                                    <small>Personal</small>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-code-square me-2"></i>
+                                    <small>Blender</small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Crime Scene -->
+                <div class="col filterDiv projects personal blender ue">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                        style="background-image: url('unsplash-photo-2.jpg');"
+                        onclick="window.location.href='projects\\CrimeScene.html'">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Crime Scene</h3>
+                            <p>A house being barriered off from the rest of the street. What has happened here? Created in Blender and
+                                rendered in
+                                Unreal Engine.</p>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+                                    <i class="bi bi-brush me-2"></i>
+                                </li>
+                                <li class="d-flex align-items-center me-3">
+                                    <i class="bi bi-geo-fill me-2"></i>
+                                    <small>Personal</small>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-code-square me-2"></i>
+                                    <small>Blender/Unreal Engine</small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Detective Office -->
+                <div class="col filterDiv projects personal blender ue">
+                    <div class="card card-cover h-100 overflow-hidden text-bg-dark rounded-4 shadow-lg"
+                        style="background-image: url('unsplash-photo-2.jpg');"
+                        onclick="window.location.href='projects\\DetectiveOffice.html'">
+                        <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+                            <h3 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">Detective Office</h3>
+                            <p>A noire style detectives office of a Private Investigator in the middle of an investigation. Created in
+                                Blender and
+                                rendered using Unreal Engine</p>
+                            <ul class="d-flex list-unstyled mt-auto">
+                                <li class="me-auto">
+                                    <i class="bi bi-brush me-2"></i>
+                                </li>
+                                <li class="d-flex align-items-center me-3">
+                                    <i class="bi bi-geo-fill me-2"></i>
+                                    <small>Personal</small>
+                                </li>
+                                <li class="d-flex align-items-center">
+                                    <i class="bi bi-code-square me-2"></i>
+                                    <small>Blender/Unreal Engine</small>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <p class="col-md-4 mb-0 text-body-secondary">corbinr40</p>
+    
+            <a href="/"
+                class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                <img class="rounded-circle d-block mx-auto mb-4" src="/assets/icon256.png" alt="" width="52" height="52">
+            </a>
+    
+            <ul class="nav col-md-4 justify-content-end">
+                <li class="nav-item"><a href="#programs" class="nav-link px-2 text-body-secondary">Programs</a></li>
+                <li class="nav-item"><a href="#games" class="nav-link px-2 text-body-secondary">Games</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link px-2 text-body-secondary">3D Projects</a></li>
+                <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Contact</a></li>
+            </ul>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+
+    <script>
+        const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+        const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    </script>
+
+    <script>
+        filterSelection("all")
+        function filterSelection(c) {
+            var x, i;
+            x = document.getElementsByClassName("filterDiv");
+            if (c == "all") c = "";
+            for ( i = 0; i < x.length; i++) {
+                removeClass(x[i], "show");
+                if (x[i].className.indexOf(c) > -1) addClass(x[i], "show");
+            }
+        }
+
+        function addClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                if (arr1.indexOf(arr2[i]) == -1) {
+                    element.className += " " + arr2[i];
+                }
+            }
+        }
+
+        function removeClass(element, name) {
+            var i, arr1, arr2;
+            arr1 = element.className.split(" ");
+            arr2 = name.split(" ");
+            for (i = 0; i < arr2.length; i++) {
+                while (arr1.indexOf(arr2[i]) > -1) {
+                    arr1.splice(arr1.indexOf(arr2[i]), 1);
+                }
+            }
+            element.className = arr1.join(" ");
+        }
+
+        // Add active class to the current button (highlight it)
+        var buttonContainer = document.getElementById("filterButtonContainer");
+        var buttons = buttonContainer.getElementsByClassName("filterButton");
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].addEventListener("click", function () {
+                var current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(" active", "");
+                this.className += " active";
+            });
+        }
+    </script>
+</body>
+
+</html>
