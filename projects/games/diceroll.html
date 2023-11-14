@@ -1,56 +1,82 @@
+<!--
+Dice Roll
+Game is currently in development and subject to change
+
+Project Status:	Ongoing
+Project Type:	Personal/Game
+Project Duration:	~3 Months
+Software Used:	Unity, xCode
+Languages Used:	C#
+Available on:	Coming soon to
+App Store® and Google Play
+About
+A casual dice rolling mobile game to pass the time. Add the roll of the dice to gain the highest score and compete against your friends and family.
+
+Features
+A Unity written mobile game for iOS and Android to occupy your time when you need a distraction for a few minutes.
+
+The random number generated has to be equalled by using the sum of the dice rolls.
+
+The sides can be peered at to determine which is the best way to roll.
+
+Gain the best scores against friends and family by sharing your scores on Facebook (Multi-Platform), Game Center (iOS only) and Google Play Games (Android only).
+
+
+-->
+
 <!doctype html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>PlayStation Xbox Scraper</title>
+    <title>Dice Roll</title>
 
     <!-- For old IEs -->
-    <link rel="shortcut icon" href="assets/favicon.ico" />
-    
+    <link rel="shortcut icon" href="/assets/favicon.ico" />
+
     <!-- For new browsers - multisize ico  -->
-    <link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="assets/favicon.ico">
-    
+    <link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="/assets/favicon.ico">
+
     <!-- For iPad with high-resolution Retina display running iOS ≥ 7: -->
-    <link rel="apple-touch-icon" sizes="152x152" href="assets/favicon-152-precomposed.png">
-    
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/favicon-152-precomposed.png">
+
     <!-- For iPad with high-resolution Retina display running iOS ≤ 6: -->
-    <link rel="apple-touch-icon" sizes="144x144" href="assets/favicon-144-precomposed.png">
-    
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/favicon-144-precomposed.png">
+
     <!-- For iPhone with high-resolution Retina display running iOS ≥ 7: -->
-    <link rel="apple-touch-icon" sizes="120x120" href="assets/favicon-120-precomposed.png">
-    
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/favicon-120-precomposed.png">
+
     <!-- For iPhone with high-resolution Retina display running iOS ≤ 6: -->
-    <link rel="apple-touch-icon" sizes="114x114" href="assets/favicon-114-precomposed.png">
-    
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/favicon-114-precomposed.png">
+
     <!-- For iPhone 6+ -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon-180-precomposed.png">
-    
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon-180-precomposed.png">
+
     <!-- For first- and second-generation iPad: -->
-    <link rel="apple-touch-icon" sizes="72x72" href="assets/favicon-72-precomposed.png">
-    
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/favicon-72-precomposed.png">
+
     <!-- For non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
-    <link rel="apple-touch-icon" sizes="57x57" href="assets/favicon-57.png">
-    
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/favicon-57.png">
+
     <!-- For Old Chrome -->
-    <link rel="icon" sizes="32x32" href="assets/favicon-32.png">
-    
+    <link rel="icon" sizes="32x32" href="/assets/favicon-32.png">
+
     <!-- For IE10 Metro -->
     <meta name="msapplication-TileColor" content="#FFFFFF">
-    <meta name="msapplication-TileImage" content="assets/favicon-144.png">
+    <meta name="msapplication-TileImage" content="/assets/favicon-144.png">
     <meta name="theme-color" content="#ffffff">
-    
+
     <!-- Chrome for Android -->
-    <link rel="manifest" href="assets/manifest.json">
-    <link rel="icon" sizes="192x192" href="assets/favicon-192.png">
+    <link rel="manifest" href="/assets/manifest.json">
+    <link rel="icon" sizes="192x192" href="/assets/favicon-192.png">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="/style.css">
-    </head>
+</head>
 
 <body>
     <div class="container sticky-top container-fluid" style="background-color: white">
@@ -61,31 +87,33 @@
                     <span class="fs-4">corbinr40</span>
                 </a>
             </div>
-    
+
             <button class="navbar-toggler navbar navbar-dark" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-    
+
             <!-- Floating Menu Buttons -->
             <nav id="mainNavBar" class="navbar navbar-expand-lg">
                 <div class="container-fluid">
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                         <div class="d-flex col-12 col-md-auto mb-2 justify-content-center mb-md-0">
                             <ul class="nav nav-pills">
-                                <li class="nav-item"><a href="/index.html#programs" class="nav-link px-2">Programs</a></li>
-                                <li class="nav-item"><a href="/index.html#games" class="nav-link px-2">Games</a></li>
-                                <li class="nav-item"><a href="/index.html#projects" class="nav-link px-2">3D Projects</a>
+                                <li class="nav-item"><a href="/index.html#programs" class="nav-link px-2">Programs</a>
                                 </li>
+                                <li class="nav-item"><a href="/index.html#games" class="nav-link px-2">Games</a></li>
+                                <li class="nav-item"><a href="/index.html#projects" class="nav-link px-2">3D
+                                        Projects</a></li>
                                 <!-- <li class="nav-item"><a href="#tech" class="nav-link px-2">Tech</a></li> -->
-                                <li class="nav-item"><a href="/index.html#contact" class="nav-link px-2">Contact</a></li>
+                                <li class="nav-item"><a href="/index.html#contact" class="nav-link px-2">Contact</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </nav>
-    
+
             <nav id="mainNavBar" class="navbar navbar-expand-lg">
                 <div class="container-fluid">
                     <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -105,7 +133,8 @@
                                 <span class="visually-hidden">Dismiss</span>
                             </button>
                             <button class="btn btn-outline-primary rounded-circle p-2 lh-1" type="button"
-                                data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="@corbinr40_art"
+                                data-bs-toggle="tooltip" data-bs-placement="bottom"
+                                data-bs-original-title="@corbinr40_art"
                                 onclick="window.location.href='https://www.instagram.com/corbinr40_art';">
                                 <i class="bi bi-instagram"></i>
                                 <span class="visually-hidden">Dismiss</span>
@@ -113,7 +142,7 @@
                             <button class="btn btn-outline-primary rounded-circle p-2 lh-1" type="button"
                                 data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-original-title="corbinr40"
                                 onclick="window.location.href='https://www.sketchfab.com/corbinr40';">
-                                <!-- <img src="/assets/externalLinkLogo/sketchfab-logo-black.svg" width="16" height="14"> -->
+                                <!-- <img src="/assets//externalLinkLogo/sketchfab-logo-black.svg" width="16" height="14"> -->
                                 <svg viewBox="0 0 2000 2000" xmlns="http://www.w3.org/2000/svg" height="14" width="16">
                                     <path
                                         d="m1000 0c-552.32 0-1000 447.72-1000 1000s447.68 1000 1000 1000 1000-447.72 1000-1000-447.6-1000-1000-1000zm-86.88 1595.07-431.12-248.86v-502l431.12 232.79zm76.8-636.19-510.08-270.38 510.08-294.5 510.16 294.5zm510.48 388.29-429.52 248v-516.17l429.52-232z" />
@@ -124,7 +153,7 @@
                                 data-bs-toggle="tooltip" data-bs-placement="bottom"
                                 data-bs-original-title="corbinr40.itch.io"
                                 onclick="window.location.href='https://corbinr40.itch.io';">
-                                <!-- <img src="/assets/externalLinkLogo/itchio-logo-textless-black.svg" width="16" height="14"> -->
+                                <!-- <img src="/assets//externalLinkLogo/itchio-logo-textless-black.svg" width="16" height="14"> -->
                                 <svg xmlns="http://www.w3.org/2000/svg" height="14" width="16"
                                     viewBox="0 0 245.371 220.736">
                                     <path
@@ -152,13 +181,14 @@
     <!-- Page Main Body -->
     <!-- Main Center Information -->
     <div class="px-4 pt-1 my-5 text-center">
-        <h1 class="display-4 fw-bold text-body-emphasis">PlayStation Xbox Scraper</h1>
+        <h1 class="display-4 fw-bold text-body-emphasis">Dice Roll</h1>
         <div class="col-lg-6 mx-auto">
-            <p class="lead mb-4">A Python script using the Selenium library to scrape the Xbox and the PlayStation stores for the Let’s Play app.</p>
+            <p class="lead mb-4">A casual dice rolling mobile game to pass the time. Add the roll of the dice to gain the highest score and compete
+            against your friends and family.</p>
         </div>
         <div class="overflow-hidden" style="max-height: 30vh;">
             <div class="container px-5 border-bottom">
-                <img src="bootstrap-docs.png" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image"
+                <img src="bootstrap-docs.png" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Showing Off Image"
                     width="700" height="500" loading="lazy">
             </div>
         </div>
@@ -185,23 +215,27 @@
                     </tr>
                     <tr>
                         <td><strong>Project Type:</strong></td>
-                        <td style="text-align: left">Personal/Script</td>
+                        <td style="text-align: left">Personal/Game</td>
                     </tr>
                     <tr>
                         <td><strong>Project Duration:</strong></td>
-                        <td style="text-align: left">~2 months</td>
+                        <td style="text-align: left">~3 Months</td>
                     </tr>
                     <tr>
                         <td><strong>Software Used:</strong></td>
-                        <td style="text-align: left">Python IDE, Selenium</td>
+                        <td style="text-align: left">Unity, Xcode</td>
                     </tr>
                     <tr>
                         <td><strong>Languages Used:</strong></td>
-                        <td style="text-align: left">Python</td>
+                        <td style="text-align: left">C#</td>
                     </tr>
                     <tr>
                         <td><strong>Available On:</strong></td>
-                        <td style="text-align: left">GitHub</td>
+                        <td style="text-align: left">Coming soon to</td>
+                    </tr>
+                    <tr>
+                        <td><strong></strong></td>
+                        <td style="text-align: left">App Store® and Google Play</td>
                     </tr>
                 </tbody>
             </table>
@@ -212,17 +246,18 @@
         <!-- About Project -->
         <h2><strong>Features</strong></h2>
         <div class="container px-5">
-            <img src="bootstrap-docs.png" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image" width="350"
-                height="250" loading="lazy">
+            <img src="bootstrap-docs.png" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Example image"
+                width="350" height="250" loading="lazy">
         </div>
         <div class="col-lg-6 mx-auto">
-            <p>A custom written scraper using Python and the Selenium framework to gather data from the Xbox and PlayStation store for
-            my “Let’s Play” (link) program.</p>
+            <p>A Unity written mobile game for iOS and Android to occupy your time when you need a distraction for a few minutes.</p>
             
-            <p>This CLI program can be run on multiple platforms (tried on MacOS, Windows 10 and Ubuntu) which can require different
-            browsers (Safari, Chrome, Edge, Firefox, etc.).</p>
+            <p>The random number generated has to be equalled by using the sum of the dice rolls.</p>
             
-            <p>Saves data to a CSV file and converted to a custom written TypeScript database file</p>
+            <p>The sides can be peered at to determine which is the best way to roll.</p>
+            
+            <p>Gain the best scores against friends and family by sharing your scores on Facebook (Multi-Platform), Game Center (iOS
+            only) and Google Play Games (Android only).</p>
         </div>
     </div>
 
@@ -231,16 +266,20 @@
     <div class="container">
         <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
             <p class="col-md-4 mb-0 text-body-secondary">corbinr40</p>
-    
+
             <a href="/"
                 class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-                <img class="rounded-circle d-block mx-auto mb-4" src="/assets/icon256.png" alt="" width="52" height="52">
+                <img class="rounded-circle d-block mx-auto mb-4" src="/assets//icon256.png" alt="" width="52"
+                    height="52">
             </a>
-    
+
             <ul class="nav col-md-4 justify-content-end">
-                <li class="nav-item"><a href="#programs" class="nav-link px-2 text-body-secondary">Programs</a></li>
-                <li class="nav-item"><a href="#games" class="nav-link px-2 text-body-secondary">Games</a></li>
-                <li class="nav-item"><a href="#projects" class="nav-link px-2 text-body-secondary">3D Projects</a></li>
+                <li class="nav-item"><a href="/index.html#programs"
+                        class="nav-link px-2 text-body-secondary">Programs</a></li>
+                <li class="nav-item"><a href="/index.html#games" class="nav-link px-2 text-body-secondary">Games</a>
+                </li>
+                <li class="nav-item"><a href="/index.html#projects" class="nav-link px-2 text-body-secondary">3D
+                        Projects</a></li>
                 <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Contact</a></li>
             </ul>
         </footer>

@@ -56,3 +56,27 @@ button:hover {
     background-color: transparent !important;
     text-decoration: none !important;
 }
+
+.cardHover:hover {
+    /* background-color: #09508d !important; */
+    /* border-radius: var(--bs-border-radius-xxl) !important; */
+    border-radius: 1.5rem !important;
+    box-shadow: 0 1rem 2rem rgb(0, 0, 0) !important;
+    /* background-color: RGBA(33, 37, 41, var(--bs-bg-opacity, 1)) !important; */
+    background-color: rgb(23, 25, 27) !important;
+    /* transition: border-radius 0.2s ease-in-out; */
+}
+
+.cardHover{
+    transition: all 0.2s ease-in-out;
+}
+
+/* .card {
+    margin-right: 2px;
+    transition: margin 0.2s ease-in-out;
+    background-color: gray;
+} */
+
+/* .shadow-lg {
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+} */
