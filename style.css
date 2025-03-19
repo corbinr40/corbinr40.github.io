@@ -58,6 +58,7 @@ button:hover {
 }
 
 .cardHover:hover {
+    cursor: pointer;
     /* background-color: #09508d !important; */
     /* border-radius: var(--bs-border-radius-xxl) !important; */
     border-radius: 1.5rem !important;
