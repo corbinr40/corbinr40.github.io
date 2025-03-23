@@ -173,8 +173,8 @@
       </h1>
       <div class="col-lg-6 mx-auto">
         <p class="lead mb-4">
-          RTCC, or Real Time Communication Captions, is a piece of software that
-          converts voice to text in a visual output, as an aid to individuals
+          RTCC, or Real Time Communication Captions, is a project that
+          converts voice to text as a visual output, as an aid to individuals
           who are hard of hearing. The plan is to deliver this via a piece of
           hardware in the form of glasses with a heads up display. However a
           fallback of this would be an app that fulfils this. The system will
@@ -421,6 +421,38 @@
 
     <div class="skillSetIntro px-4 pt-1 my-5 text-center">
       <!-- About Project -->
+      <h2><strong>Hardware</strong></h2>
+      <div class="container px-5">
+        <figure>
+          <img
+            src="/assets/pageAssets/rtcc/"
+            class="img-fluid border rounded-3 shadow-lg mb-4"
+            alt="Example image"
+            width="350"
+            height="250"
+            loading="lazy"
+          />
+          <figcaption>3D Printed Parts</figcaption>
+        </figure>
+      </div>
+      <div class="col-lg-6 mx-auto">
+        <p>Sourcing the hardware was fun, but also quite challenging as this was a new venture for the entire group. As stated before, we had some requirements, so we had a vague idea of what we needed but no specifics. </p>
+<p>We wanted to keep the project to be small, self-contained and requiring a low power source. This led us to using a Raspberry Pi Zero 2 W due to its small form factor, surprising amount of power, and ease of use. Plus, I already had some experience with using a Pi and spent a lot of time in Linux. </p>
+<p>Once the brains of the operations had been decided, we had to think of other elements we required for the basics of the project to work. We needed a microphone, camera and screen/ output, the latter of which we’ll go over later. Luckily for us, Raspberry Pi already had a camera module (aptly named the Raspberry Pi Camera Module) with loads of examples and documentation to boot. Following this, we researched a few different microphones to use and ended up using the Adafruit I2S MEMS Microphone. </p>
+<p>When trying to figure out how we wanted to output the application, our lecturer pointed us towards some old gadgets milling around their office. There, we were shown a tiny head mounted display which had a projector that refracted the screen to overlay what you can see. </p>
+<p>The last piece of hardware was a UPS HAT for the Raspberry Pi Zero. This served as our power source for the entire device delivering 1000mAh at 3.7V, which was enough to power the Pi, Camera, Microphone, and display. </p>
+<p>Once all the hardware had been sourced, we need a way to house it all. We toyed around with a few designs different ways we wanted the hardware to fit, but ultimately landed on a device that could clip onto an individual’s current glasses, this seemed the most accessible outcome especially from this prototyping phase. This now meant we needed to design something, so we moved onto learning CAD. This wasn’t overly difficult as I already had experience using Blender, so I had to convert my existing knowledge to a more realistic point of thinking. Eventually we settled on a model we were happy with and sent it off to the printer. This was the first time any of us had used a 3D printer, so we were entirely new to the types of materials and everything else that comes with that, but luckily all we had to do was supply the model. The printer was an Ultimaker S5 and we used a white PLA filament. </p>
+<p>Whilst the model was printing it was time to test all the hardware together. After creating some wiring diagrams, everything was fit together. The design ended up being bulkier than anticipated as the hardware wasn’t ours (it was the Uni’s) so we couldn’t solder anything together and had to rely on connecting pins together. </p>
+<p>Each element had some fun additions with them. Such as the UPS battery had the ability to see the real time power usage and current remaining power. We were able to implement this into the UI. </p>
+<p>Another would be the microphone. When testing, it couldn’t pick up voices that well. So, we went hunting around and found out the microphone is mostly used for “loud sudden noises” such as a clap or beep. To overcome this, we boosted the audio capture to better hear voices. When listening back, it’s very noisy and not too pleasant but that wasn’t an issue as we only needed to convert the audio to text, and this worked a treat (as explained in the next section). </p>
+<p>After several hours, the print was completed, and we can begin a fit test. And… I forgot to add holes for the USB, power, and SD card slot but I did remember the camera cable hole! So, after measuring a few more times and add in more holes, we now have a fully functional case. </p>
+<p>All the hardware was working perfectly together, but that was all thanks to the 3 software elements of the project: Audio, Visual and UI. </p>
+
+      </div>
+    </div>
+
+    <div class="skillSetIntro px-4 pt-1 my-5 text-center">
+      <!-- About Project -->
       <h2><strong>Audio</strong></h2>
       <div class="container px-5">
         <figure>
@@ -436,9 +468,12 @@
         </figure>
       </div>
       <div class="col-lg-6 mx-auto">
-        <p>
-          aa
-        </p>
+        <p>TL;DR: Due to time constraints we weren’t able to create a custom voice recognition machine learning model so we ended up using Alphacephei’s VOSK Small English Model which worked a treat. </p>
+        <p>Initially, we wanted our system to record the conversation, save to a .wav file format, then convert the audio file to text so the users can, at any point, go “back in time” on the conversation. Ultimately this was far too slow for our application, so we had to think of a new solution. </p>
+        <p>On the hunt for a new method, we solved that and another concern we were having. We were debating on how to navigate the device (change settings, enable/disable the transcription, etc) as we wanted the device to be self-contained. We wouldn’t have minded any physical interaction (button, touch pad, etc) but wanted the device to be as minimalistic as possible (which could never work considering the hardware we had). This led us to lean more towards using voice commands, like AI Personal Assistants (such as Alexa and Siri). When discussing this, the thought occurred to just use the same method to capture the conversation as to use voice commands. </p>
+        <p>Our new goal was to create our own voice recognition machine learning model but due to the tight time constraints and the amount of data required to train a model of that magnitude, we ultimately made it a stretch goal of the project. With that in mind, we ensured that our code would theoretically have a “drop in, swap out” effect when it comes to using a custom ML or preexisting one. Unfortunately, we had to go with a preexisting library, but we didn’t just settle on the first one which we found. </p>
+        <p>To make sure our code worked; we used Google’s speech recognition API (well, library). This worked as well as expected but was not good enough for us as it always required an Internet connection, plus we couldn’t validate the safety and security of the data being sent off. So, we investigated offline models. </p>
+        <p>We researched a few models, and tried a couple out, but they were either far too computationally heavy, especially for a Raspberry Pi, or didn’t work that well within our application. The model we ultimately landed on was Alphacephei’s VOSK library with their “VOSK Small EN US” model. This worked an absolute treat, and we were more than happy with how well it recognised voices and how it performed integrated in our application. </p>
       </div>
     </div>
 
@@ -459,11 +494,13 @@
         </figure>
       </div>
       <div class="col-lg-6 mx-auto">
-        <p>
-          The visual component is a custom Machine Learning Model trained on Flickr-Faces-HQ Dataset (by NVLabs) and further with MaskedFace-Net dataset. 
-          The ML model was developed, unintentionally, in 2 parts. The first being trained on <code>(NUMBER)</code> of images. An issue with this was that the ML model could not detect people who were wearing a mask, as this idea stemmed from 2020 lockdown due hearing that people who are hearing impared would be unable to lipread due to the masks.
-          This then stemmed the further ML development by including masked faces in the training data. This opened our eyes on the faults with ML model, by over teaching a model causing it to ultimately fail.
-        </p>
+        <p>TL;DR: The visual component is a custom Machine Learning Model trained on Flickr-Faces-HQ Dataset (by NVLabs) and further with MaskedFace-Net dataset, totalling 4500 images, using OpenCV. </p>
+        <p>After researching how to train an image-based machine learning model, I settled on using OpenCV due to its ease of implementing into Python. Once I had a vague understanding of what I was doing, I set off on looking for a “face” dataset. This ended up being easier that I thought as Nvidia have already collated a library of 70,000 faces from Flickr with their Flickr-Faces-HQ Dataset, but I did not have enough storage to download their entire data set which totalled 2.56 TB, so I only got the images which was only 89.1 GB. </p>
+        <p>Now the images have been obtained, I needed to label the photos to tell OpenCV what part of the images are faces and what is not. I ended up labelling roughly 3000 images over several evenings. Once labelled I thought I could move onto the fun part of training the models, but alas this was too good to be true. </p>
+        <p>To not have the model training take an age and a half, I wanted to leverage the power of CUDA (as I had a 1080ti at the time). I thought this would be a relatively easy task, but boy was I wrong. Initially I was doing all of this on Windows but later moved onto Linux (Ubuntu to be specific) which worked so much better with the model training. </p>
+        <p>Now everything was up and running in Ubuntu, I was able to train my first model. To make sure everything was set up correctly and the images were labelled correctly, I did a small model with a fraction of the images. This first model consisted of 700 positive images and 1000 negative ones. This model confirmed that everything that I had done was correct but was nowhere near perfect, requiring to ramp up the amount of training images. The next model was ramped up to 2700 positive images and 5000 negative images and everything was working perfectly! </p>
+        <p>But there was an issue. After showing off the model to the rest of the team, I tried wearing a mask to use the model and nothing. The model failed as it could not detect a face where the mouth and nose were hidden, so back to the drawing board. Well, the Internet to find another dataset that included face masks. After some research, I found the MaskedFace-Net dataset which, as the name suggests, has images of people wearing face masks. Now the fun part, again, labelling all the images. This time it only took a couple of evenings as it was only 1800 images. So, with everything was labelled, it was time to do the final training of the model, and everything went off without a hitch! </p>
+        <p>The final step, which will be expanded upon in the following section, was to implement to work with the UI. </p>
       </div>
     </div>
 
@@ -484,15 +521,22 @@
         </figure>
       </div>
       <div class="col-lg-6 mx-auto">
-        <p>
-          The applications interface was developed using the Python library TKInter (this is preinstalled with Python). The UX was first broken down into it;s main components
-        </p>
+        <p>TL;DR: The UI is developed with Pythons preinstalled library, Tkinter. The UI consists of the main screen (with the ability to toggle the face detection and subtitles), the settings screen, and command hints. </p>
+<p>From the get-go, we knew the UI had to be clean and concise. We broke down the key elements of what screens needed to be built and how they all interacted with one another. This led to 4 main elements: displaying audio (text from a voice); face tracking; settings menu; and help menu. </p>
+<p>The bulk of the UI development stemmed from a class diagram designed quite early in the like of the project. Even though some elements slightly changed, we tried to keep everything as close to this as possible. </p> 
+<p>Now that the main elements have been designed, we need to develop them. We muddled over some different UI libraries, PyQt5 and Tkinter, but ultimately settled on Tkinter as its preinstalled with Python and supports many different platforms, also the team was familiar working with Tkinter. Another reason for going with Tkinter was due to its ability to easily overlay elements on top of one another. This would drastically help with what we wanted to develop. Another reason was down to how the UI looked when contrasted against the “real world” when using the eyepiece screen. This is one of the reasons we decided to use a pure black background as elements would nicely contrast against it, making it much easier to see and read everything. </p>
+<p>The first developed screen was the main/Home Screen. This consisted of the current battery level, the current time, and indications to whether microphone and/or camera were currently active. This screen was the primary screen which all the other elements would overlay onto. </p>
+<p>The visual component worked by matching the canvas and camera resolution to the output display (640p) enabling a much closer cross over when displaying the results of the face detection model. As the eyepiece and camera weren’t directly overlaying one another, we had to slightly displace the visual detection (the square representing a person’s face) so it was accurate to where the person is. Once we’d perfected this, we made the square thick enough that it’s noticeable but not intrusive. </p>
+<p>The next part to develop is adding the text to the screen. As we already were tracking someone’s face, we just needed to add the text floating below a person’s face. Simple, right? Except, the text wouldn’t be remembered when the face moved, which was happening every frame (technically). So, a new approach had to be done! Nothing too technical as all we did was save the text into a variable and cleared it after each sentence. And now, everything worked fine! </p>
+<p>The last part was to add a settings menu. This was quite simple to implement as it was just a white rectangle with text on it. We just needed to make sure everything would still fit and scale depending on what resolution was being used. This made us change from absolute values to fractional based ones. When discussing what settings we wanted to include, we started listing things we liked on our own devices. These included, changing the text size, text colours and font type. So, we investigated implementing these. We managed to implement changing the text’s font, size and colour and the face detectors colour and size. </p>
+<p>The last part to add was the help menu. This was relatively simple as it followed the same technique as the settings menu, except it would disappear after a certain number of seconds. Unfortunately, not much more to say about it. </p>
+
       </div>
     </div>
 
     <div class="skillSetIntro px-4 pt-1 my-5 text-center">
       <!-- About Project -->
-      <h2><strong>Hardware</strong></h2>
+      <h2><strong>Future Development</strong></h2>
       <div class="container px-5">
         <figure>
           <img
@@ -507,12 +551,15 @@
         </figure>
       </div>
       <div class="col-lg-6 mx-auto">
-        <p>
-          aa
-        </p>
+        <p>As fun as the project wound up to be, it wasn’t all smooth sailing. There were a few ups and downs due to unforeseen circumstances, but due to the amount of planning we did before the project started, we were never lost or had to scramble to get things finished. But we did have some stretch goals for the project that we weren’t able to complete but could be completed one day. </p>
+<p>As mentioned throughout, we wanted to develop our own custom speech to text machine learning model. This is more than possible but it takes a monumental about of time and data to develop something even half decent. </p>
+<p>Building on from this, it would be great have a real time conversation translator. This would, theoretically, work the exact same but would translate what a person was saying to the user to enable a conversation to take place. This translator would ideally automatically detect the language being spoken. Stemming on from this, we wanted to have a sign translation for more of the same reasons previously said. </p>
+<p>Another interesting development would be to directly tell the user through audio prompts. This would require a small speaker relaying information to the user, but it would be an entirely optional feature. </p>
+<p>The next one is something everyone wants: their program to run faster and more efficiently. There are many ways this can be achieved, but the easiest one with keeping the costs virtually the same would be to rewrite the application in C, or similar language. This would be a huge task, especially with many of us only just beginning to learn it. </p>
+<p>The final improvement would be to make the overall design much sleeker. We were very much limited with the hardware supplied to us and the time we had to develop everything. When doing research, we found there were some small scale transparent OLED displays. Using one of these, it could drastically improve performance as the Raspbian OS UI wouldn’t have to be loaded for the application to run and we would directly render to the display. This would be a monumental task to pull off, but an extremely rewarding one. </p>
+
       </div>
     </div>
-
     <div class="container">
       <footer
         class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"
