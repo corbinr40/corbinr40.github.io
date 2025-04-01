@@ -72,6 +72,15 @@ button:hover {
     transition: all 0.2s ease-in-out;
 }
 
+.carousel > .carousel-inner > .carousel-item > img{
+    background-color: rgba(0, 0, 0, 0.432);
+    width:100%;
+    object-fit: contain;
+    height:550px;
+}
+.carousel > .carousel-inner > .carousel-item > div{
+    background-color: rgba(0, 0, 0, 0.226);
+}
 /* .card {
     margin-right: 2px;
     transition: margin 0.2s ease-in-out;
