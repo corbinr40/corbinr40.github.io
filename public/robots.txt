@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /editor
+Disallow: /rss
+
+Sitemap: https://corbinr40.github.io/sitemap.xml

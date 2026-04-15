@@ -1,0 +1,9 @@
+// Bootstrap SCSS sources (enables variable/mixin customization)
+@import 'bootstrap/scss/bootstrap';
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+
+// Project partials
+@import 'variables';
+@import 'base';
+@import 'components';
+@import 'utilities';

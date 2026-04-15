@@ -1,0 +1,90 @@
+// ===== Global Resets =====
+
+body {
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-primary);
+}
+
+// ===== Links =====
+
+a {
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
+    color: var(--color-link);
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+  &:hover {
+    color: var(--color-link-hover);
+  }
+}
+
+// ===== SVG Paths (social icons etc.) =====
+
+path {
+  fill: var(--color-text-primary);
+
+  &:hover {
+    fill: var(--color-text-secondary);
+  }
+}
+
+// ===== Buttons =====
+
+.btn-outline-primary {
+  color: var(--color-btn-border);
+  --bs-btn-border-color: var(--color-btn-border);
+  --bs-btn-hover-bg: var(--color-bg-secondary);
+  --bs-btn-hover-border-color: var(--color-btn-hover-border);
+  --bs-btn-hover-color: var(--color-text-primary);
+  --bs-btn-active-bg: var(--color-bg-secondary);
+  --bs-btn-active-color: var(--color-text-primary);
+  --bs-btn-active-border-color: var(--color-btn-hover-border);
+  background-color: transparent;
+  text-decoration: none;
+}
+
+
+.btn-primary {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: var(--color-btn-border);
+  --bs-btn-border-color: var(--color-btn-border);
+  --bs-btn-hover-color: #fff;
+  --bs-btn-hover-bg: var(--color-bg-secondary);
+  --bs-btn-hover-border-color: var(--color-btn-hover-border);
+  --bs-btn-focus-shadow-rgb: 49, 132, 253;
+  --bs-btn-active-color: var(--color-text-primary);
+  --bs-btn-active-bg: var(--color-bg-secondary);
+  --bs-btn-active-border-color: var(--color-btn-hover-border);
+  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  --bs-btn-disabled-color: var(--color-text-primary);
+  --bs-btn-disabled-bg: var(--color-bg-secondary);
+  --bs-btn-disabled-border-color: var(--color-btn-border);
+}
+
+// --bs-btn-hover-color
+// --bs-btn-hover-bg
+// --bs-btn-hover-border-color
+
+button {
+  &:link,
+  &:visited,
+  &:active {
+    color: var(--color-text-primary);
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+  &:hover {
+    color: var(--color-text-secondary);
+    background-color: transparent;
+    text-decoration: none;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
