@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { blogEntries } from '../content';
 import SEO from '../components/SEO';
 
-const SITE_URL = 'https://corbinr40.github.io';
+const SITE_URL = 'https://corbinr40.com';
 
 function toRfc2822(dateStr: string | undefined): string {
   if (!dateStr) return '';

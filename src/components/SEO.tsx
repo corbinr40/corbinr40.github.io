@@ -24,7 +24,7 @@ export default function SEO({ title, description, ogImage }: SEOProps) {
 
     const desc = description || '';
     const image = ogImage || '/assets/icon256.png';
-    const url = `https://corbinr40.github.io${window.location.pathname}`;
+    const url = `https://corbinr40.com${window.location.pathname}`;
 
     if (desc) {
       setMetaTag(desc, 'description');
@@ -35,7 +35,7 @@ export default function SEO({ title, description, ogImage }: SEOProps) {
     setMetaTag('website', 'og:type', true);
     setMetaTag(url, 'og:url', true);
     setMetaTag(
-      image.startsWith('http') ? image : `https://corbinr40.github.io${image}`,
+      image.startsWith('http') ? image : `https://corbinr40.com${image}`,
       'og:image',
       true,
     );

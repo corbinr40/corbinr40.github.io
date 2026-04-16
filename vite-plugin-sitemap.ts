@@ -6,7 +6,7 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const SITE_URL = 'https://corbinr40.github.io';
+const SITE_URL = 'https://corbinr40.com';
 
 const staticRoutes = ['/', '/blog', '/search', '/privacy', '/contact'];
 

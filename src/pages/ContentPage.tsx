@@ -74,7 +74,7 @@ export default function ContentPage() {
         <Component />
       </MDXProvider>
       <div className="container px-4 py-3">
-        <ShareButtons title={frontmatter.title} url={`https://corbinr40.github.io${pathname}`} />
+        <ShareButtons title={frontmatter.title} url={`https://corbinr40.com${pathname}`} />
       </div>
       {isBlog && slug && <BlogPostNav currentSlug={slug} />}
     </ContentProvider>

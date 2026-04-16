@@ -3,4 +3,4 @@ Allow: /
 Disallow: /editor
 Disallow: /rss
 
-Sitemap: https://corbinr40.github.io/sitemap.xml
+Sitemap: https://corbinr40.com/sitemap.xml
