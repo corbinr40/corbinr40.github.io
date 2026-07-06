@@ -13,7 +13,7 @@ export default function PrivacyPolicy() {
             personal information. Anonymous, aggregated visit statistics — page
             views, referrers, and performance timings — are measured with
             Cloudflare Web Analytics, which uses no cookies or client-side storage
-            and does not track visitors across sites. See{' '}
+            and does not track visitors across sites. The only data stored in your browser is your light/dark theme preference, which never leaves your device. See{' '}
             <a href="https://www.cloudflare.com/web-analytics/" target="_blank" rel="noopener noreferrer">
               Cloudflare Web Analytics
             </a>{' '}

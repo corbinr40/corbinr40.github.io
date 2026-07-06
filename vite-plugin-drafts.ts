@@ -14,8 +14,8 @@ export default function draftsPlugin(): Plugin {
     enforce: 'pre', // run before @mdx-js/rollup so the stub is what gets compiled
     apply: 'build',
     transform(code, id) {
+      if (!id.split('?')[0].endsWith('.mdx')) return null;
       if (!/visible:\s*false/.test(code)) return null;
-      if (!id.includes('.mdx')) return null;
       // Replace content with a minimal default export only.
       // Frontmatter will be undefined (not exported), which src/content/index.ts filters out.
       return {
