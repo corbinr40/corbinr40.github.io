@@ -3,7 +3,8 @@ import type { ContentFrontmatter } from '../context/ContentContext';
 
 interface ContentModule {
   default: ComponentType;
-  frontmatter: ContentFrontmatter;
+  // null/undefined when vite-plugin-drafts stubbed the module out of a production build
+  frontmatter?: ContentFrontmatter | null;
 }
 
 // Eagerly import all MDX modules at build time
@@ -16,11 +17,13 @@ function extractSlug(path: string): string {
 }
 
 function buildEntries(modules: Record<string, ContentModule>) {
-  return Object.entries(modules).map(([path, mod]) => ({
-    slug: extractSlug(path),
-    frontmatter: mod.frontmatter,
-    Component: mod.default,
-  }));
+  return Object.entries(modules)
+    .filter(([, mod]) => mod.frontmatter != null)
+    .map(([path, mod]) => ({
+      slug: extractSlug(path),
+      frontmatter: mod.frontmatter!,
+      Component: mod.default,
+    }));
 }
 
 export const projectEntries = buildEntries(projectModules);
