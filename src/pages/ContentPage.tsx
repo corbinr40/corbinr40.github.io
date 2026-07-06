@@ -17,7 +17,6 @@ import DescList from '../components/DescList';
 import BlogPostNav from '../components/BlogPostNav';
 import ShareButtons from '../components/ShareButtons';
 import TableOfContents from '../components/TableOfContents';
-import PasswordGate from '../components/PasswordGate';
 import NotFound from './NotFound';
 
 const mdxComponents = {
@@ -46,7 +45,7 @@ export default function ContentPage() {
   }
 
   const { Component, frontmatter } = entry;
-  const isHidden = frontmatter.visible === false;
+  const isDraft = frontmatter.visible === false;
 
   const breadcrumbItems = isBlog
     ? [
@@ -68,6 +67,14 @@ export default function ContentPage() {
       <div className="container px-4 pt-3">
         <Breadcrumbs items={breadcrumbItems} />
       </div>
+      {import.meta.env.DEV && isDraft && (
+        <div className="container px-4 pt-3">
+          <div className="alert alert-warning py-2 mb-0" role="alert">
+            <i className="bi bi-eye-slash me-2" />
+            Draft — excluded from production builds
+          </div>
+        </div>
+      )}
       <SEO title={frontmatter.title} description={frontmatter.description} />
 
       <div className="content-layout">
@@ -87,14 +94,6 @@ export default function ContentPage() {
       </div>
     </ContentProvider>
   );
-
-  if (isHidden) {
-    return (
-      <PasswordGate title={frontmatter.title}>
-        {pageContent}
-      </PasswordGate>
-    );
-  }
 
   return pageContent;
 }
