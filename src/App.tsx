@@ -9,14 +9,12 @@ import Contact from './pages/Contact';
 import ContentPage from './pages/ContentPage';
 import BlogList from './pages/BlogList';
 import RssPage from './pages/RssPage';
-import { usePageTracking } from './hooks/usePageTracking';
 
 // Dev-only: import.meta.env.DEV is statically false in prod builds, so the
 // dynamic import is dead code and Rollup drops the Editor + jszip chunks.
 const Editor = import.meta.env.DEV ? lazy(() => import('./pages/Editor')) : null;
 
 function AppRoutes() {
-  usePageTracking();
   return (
     <Routes>
       <Route element={<Layout />}>
