@@ -41,7 +41,7 @@ export default function OverviewTable(props: OverviewTableProps) {
 
   return (
     <div className="col-lg-6 mx-auto my-4">
-      <Row label="Status">{status}</Row>
+      <Row label="Status"><span style={{ textTransform: 'capitalize' }}>{status}</span></Row>
       <Row label="Type">{type}</Row>
       <Row label="Duration">{duration}</Row>
       <Row label="Software">{software}</Row>

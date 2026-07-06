@@ -17,6 +17,7 @@ import DescList from '../components/DescList';
 import BlogPostNav from '../components/BlogPostNav';
 import ShareButtons from '../components/ShareButtons';
 import TableOfContents from '../components/TableOfContents';
+import PasswordGate from '../components/PasswordGate';
 import NotFound from './NotFound';
 
 const mdxComponents = {
@@ -45,6 +46,7 @@ export default function ContentPage() {
   }
 
   const { Component, frontmatter } = entry;
+  const isHidden = frontmatter.visible === false;
 
   const breadcrumbItems = isBlog
     ? [
@@ -61,22 +63,38 @@ export default function ContentPage() {
         { label: frontmatter.title },
       ];
 
-  return (
+  const pageContent = (
     <ContentProvider frontmatter={frontmatter}>
       <div className="container px-4 pt-3">
         <Breadcrumbs items={breadcrumbItems} />
       </div>
       <SEO title={frontmatter.title} description={frontmatter.description} />
-      <div className="container px-4">
-        <TableOfContents />
+
+      <div className="content-layout">
+        <aside className="content-layout__toc">
+          <TableOfContents />
+        </aside>
+
+        <div className="content-layout__main">
+          <MDXProvider components={mdxComponents}>
+            <Component />
+          </MDXProvider>
+          <div className="container px-4 py-3">
+            <ShareButtons title={frontmatter.title} url={`https://corbinr40.com${pathname}`} />
+          </div>
+          {isBlog && slug && <BlogPostNav currentSlug={slug} />}
+        </div>
       </div>
-      <MDXProvider components={mdxComponents}>
-        <Component />
-      </MDXProvider>
-      <div className="container px-4 py-3">
-        <ShareButtons title={frontmatter.title} url={`https://corbinr40.com${pathname}`} />
-      </div>
-      {isBlog && slug && <BlogPostNav currentSlug={slug} />}
     </ContentProvider>
   );
+
+  if (isHidden) {
+    return (
+      <PasswordGate title={frontmatter.title}>
+        {pageContent}
+      </PasswordGate>
+    );
+  }
+
+  return pageContent;
 }

@@ -59,7 +59,7 @@ const staticProjects: Project[] = [
   {
     id: 'github',
     title: 'GitHub',
-    description: "All of my personal projects codes are stored on my GitHub account. On this page you can see how my programs have been made, and add any additions you seem necessary.",
+    description: "Source code and smaller experiments live on my GitHub. Browse the repos, star what's useful, open an issue if something breaks.",
     category: 'programs',
     devTypes: ['extLink'],
     skills: [],
@@ -72,7 +72,7 @@ const staticProjects: Project[] = [
   {
     id: 'itchio',
     title: 'Itch.io',
-    description: "Want to try out any of the games I've made? Chances are they will be on my Itch.io page. Click the button below to be directed to my custom Itch.io page!",
+    description: "Playable builds of my game jam entries and side projects, hosted on Itch.io. Mostly free, mostly short, occasionally fun.",
     category: 'games',
     devTypes: ['extLink'],
     skills: [],
@@ -80,23 +80,23 @@ const staticProjects: Project[] = [
     href: 'https://corbinr40.itch.io',
     externalLink: true,
     status: 'ongoing',
-    visible: true,
+    visible: false,
   },
   {
     id: 'liminalspace',
     title: 'Liminal Space',
-    description: "Made for Brackeys Game Jam 2022.1 week long jam. The theme was \u201CThis is not real\u201D. A game where you\u2019ve woken in an old school with a creature lurking\u2026 somewhere. Created using Unreal Engine 4 and their Blueprints.",
+    description: 'A one-week Brackeys Game Jam entry for the theme "This is not real". You wake up in an empty school. Something else is awake too. Built in Unreal Engine 4.',
     category: 'games',
     devTypes: ['jam', 'personal'],
     skills: ['ue'],
     image: '/unsplash-photo-2.jpg',
     status: 'completed',
-    visible: true,
+    visible: false,
   },
   {
     id: 'shoppervr',
     title: 'Shopper - VR',
-    description: 'A casual shopping experience on the Meta Quest. Pick up your weekly shop by going through a virtual environment. Built using Unity Android SDK for Meta Quest 2.',
+    description: 'Do your weekly grocery shop in VR. A casual Meta Quest 2 experience built with Unity\'s Android SDK. Less stressful than a real Tesco on a Saturday.',
     category: 'games',
     devTypes: ['personal'],
     skills: ['unity', 'csharp'],
@@ -107,7 +107,7 @@ const staticProjects: Project[] = [
   {
     id: 'trainloop',
     title: 'Train Loop',
-    description: "Stuck in a constant loop on a train that's destined to not make its final stop. Talk to passengers to find information and uncover the mystery. Created using Unreal Engine 5.",
+    description: 'A narrative mystery set on a train stuck in a loop, where you piece the story together by talking to passengers. Built in Unreal Engine 5.',
     category: 'games',
     devTypes: ['personal'],
     skills: ['ue'],
@@ -118,7 +118,7 @@ const staticProjects: Project[] = [
   {
     id: 'wordbattleroyale',
     title: 'Word Battle Royale',
-    description: 'A Game Jam submission where up to 9 players compete in a touch typing battle royale. The theme was "Genre Mash". Created using Unity and C#.',
+    description: 'Up to 9 players compete in a touch-typing battle royale. A Game Jam entry for the "Genre Mash" theme, built in Unity and C#.',
     category: 'games',
     devTypes: ['jam', 'personal'],
     skills: ['unity', 'csharp'],
@@ -129,7 +129,7 @@ const staticProjects: Project[] = [
   {
     id: 'sketchfab',
     title: 'SketchFab',
-    description: 'View all of my 3D models on Sketchfab.',
+    description: 'A gallery of my 3D work on Sketchfab. Spin them around, zoom in on the textures, judge my topology freely.',
     category: '3dprojects',
     devTypes: ['extLink'],
     skills: [],
@@ -142,7 +142,7 @@ const staticProjects: Project[] = [
   {
     id: 'bobsburgers',
     title: "Bob's Burgers",
-    description: "The restaurant from Fox's animated sitcom Bob's Burgers. Created in Blender and textured using the Adobe Substance Suite.",
+    description: "The Belcher family's restaurant, recreated in 3D. Modelled in Blender, textured with Adobe Substance. A love letter to a show that refuses to get old.",
     category: '3dprojects',
     devTypes: ['personal'],
     skills: ['blender', 'substance'],
@@ -153,7 +153,7 @@ const staticProjects: Project[] = [
   {
     id: 'moestavern',
     title: "Moe's Tavern",
-    description: "The local tavern of Springfield from The Simpsons. Created in Blender and rendered using Blender Cycles.",
+    description: "Springfield's favourite dive bar, built in Blender and rendered in Cycles. A study in how to make 2D animation shapes feel plausible in 3D lighting.",
     category: '3dprojects',
     devTypes: ['personal'],
     skills: ['blender'],
@@ -164,7 +164,7 @@ const staticProjects: Project[] = [
   {
     id: 'crimescene',
     title: 'Crime Scene',
-    description: 'A house being barriered off from the rest of the street. Created in Blender and rendered in Unreal Engine.',
+    description: 'A suburban crime scene set behind police tape at night. Modelled in Blender, brought to life under Unreal Engine\'s real-time lighting.',
     category: '3dprojects',
     devTypes: ['personal'],
     skills: ['blender', 'ue'],
@@ -175,7 +175,7 @@ const staticProjects: Project[] = [
   {
     id: 'detectivesoffice',
     title: "Detective's Office",
-    description: "A noir style detective's office. Created in Blender and rendered using Unreal Engine.",
+    description: "A noir-era detective's office with heavy shadows, stacked paperwork, and a smoking ashtray. Blender for the geometry, Unreal Engine for the mood lighting.",
     category: '3dprojects',
     devTypes: ['personal'],
     skills: ['blender', 'ue'],
@@ -210,13 +210,42 @@ export const projects: Project[] = [
   ...staticProjects,
 ];
 
-export const skillsets = [
-  { title: 'Languages', skills: ['Python', 'C#', 'C++', 'Java', 'HTML', 'CSS', 'JavaScript', 'OpenCV'] },
-  { title: 'Frameworks', skills: ['React Native (JS and TS)', 'Flutter (Dart)'] },
-  { title: 'Programs', skills: ['Blender', "Adobe's Substance Suite (Painter, Designer and Sampler)", 'Krita', 'ProCreate'] },
-  { title: 'Services', skills: ['AWS', 'Azure'] },
-  { title: 'Database', skills: ['MySQL', 'SQLite'] },
-  { title: 'Operating Systems', skills: ['Windows', 'MacOS', 'Linux'] },
-  { title: 'Game Engines', skills: ['Unity', 'Unreal Engine'] },
-  { title: "IDE's", skills: ['Android Studio', 'Visual Studio', 'Visual Studio Code', 'Eclipse', 'Xcode'] },
+export type SkillLevel = 'expert' | 'proficient' | 'familiar';
+
+export interface SkillEntry {
+  name: string;
+  level?: SkillLevel;
+}
+
+export const skillsets: { title: string; skills: SkillEntry[] }[] = [
+  { title: 'Languages', skills: [
+    { name: 'Python', level: 'expert' }, { name: 'TypeScript', level: 'expert' },
+    { name: 'JavaScript', level: 'expert' }, { name: 'C#', level: 'expert' },
+    { name: 'C', level: 'proficient' }, { name: 'C++', level: 'proficient' },
+    { name: 'Dart', level: 'proficient' }, { name: 'Java', level: 'proficient' },
+    { name: 'HTML', level: 'expert' }, { name: 'CSS', level: 'expert' },
+  ]},
+  { title: 'Frameworks', skills: [
+    { name: 'React', level: 'expert' }, { name: 'React Native', level: 'proficient' },
+    { name: 'Flutter', level: 'proficient' }, { name: 'FastAPI', level: 'proficient' },
+    { name: 'ESP-IDF', level: 'familiar' }, { name: 'OpenCV', level: 'familiar' },
+  ]},
+  { title: 'Cloud & Services', skills: [
+    { name: 'AWS', level: 'familiar' }, { name: 'Azure', level: 'familiar' },
+  ]},
+  { title: 'Databases', skills: [
+    { name: 'PostgreSQL', level: 'proficient' }, { name: 'TimescaleDB', level: 'familiar' },
+    { name: 'MySQL', level: 'familiar' }, { name: 'SQLite' },
+  ]},
+  { title: 'Programs', skills: [
+    { name: 'KiCad', level: 'familiar' },
+  ]},
+  { title: 'Operating Systems', skills: [
+    { name: 'Windows' }, { name: 'macOS' }, { name: 'Linux' },
+  ]},
+  { title: 'IDEs & Tooling', skills: [
+    { name: 'Visual Studio Code' }, { name: 'Visual Studio' },
+    { name: 'PyCharm' }, { name: 'Android Studio', level: 'familiar' },
+    { name: 'Xcode' }, { name: 'Eclipse' },
+  ]},
 ];

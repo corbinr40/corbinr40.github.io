@@ -92,6 +92,56 @@ div.textContainer li {
   }
 }
 
+// ===== Pulse Dot (availability badge) =====
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+.pulse-dot {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: inherit;
+    animation: pulse-ring 1.8s ease-out infinite;
+  }
+}
+
+// ===== Footer Logo =====
+
+.footer-logo {
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-border);
+}
+
+// ===== Skill Legend =====
+
+.skill-legend {
+  display: flex;
+  gap: 1.25rem;
+  padding-top: 0.5rem;
+  font-size: 12px;
+  color: var(--color-text-secondary);
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+}
+
 // ===== Filter Toggle =====
 
 .filterDiv {
@@ -147,7 +197,7 @@ div.textContainer li {
   .navbar-arc,
   footer,
   .back-to-top,
-  .toc-wrapper,
+  .content-layout__toc,
   .share-buttons,
   .breadcrumb,
   .blog-post-nav {

@@ -1,7 +1,7 @@
 ---
 id: "diceroll"
 title: "Dice Roll"
-description: "Dice. Maths. Rolling. What more could you want? Here is a casual game where you have to equal a randomly chosen number using the sum of a dice roll. Created using Unity and C# for Android and iOS devices."
+description: "A casual mobile dice game where you match a target number by rolling a handful of dice. Built in Unity and C# for Android and iOS."
 category: "games"
 devTypes:
   - "personal"
@@ -14,15 +14,15 @@ type: "Personal/Game"
 duration: "~3 Months"
 software: "Unity, Xcode"
 languages: "C#"
-availableOn: "Coming soon to App Store\u00AE and Google Play"
+availableOn: "Coming soon to App Store® and Google Play"
 contentType: "project"
-visible: true
+visible: false
 ---
 
 <div className="section-wrapper">
   <HeroSection
     title="Dice Roll"
-    paragraphs={["Dice. Maths. Rolling. What more could you want? Here is a casual game where you have to equal a randomly chosen number using the sum of a dice roll. Created using Unity and C# for Android and iOS devices."]}
+    paragraphs={["Dice. Maths. Rolling. A casual mobile game about chasing a target number with a handful of dice and a bit of mental arithmetic. Built in Unity with C#, aimed at Android and iOS as a bite-sized \"one more round\" kind of thing."]}
   />
 </div>
 
@@ -32,11 +32,29 @@ visible: true
 
 <div className="section-wrapper">
   <FeatureSection title="Features">
-    <p>A Unity-powered mobile game built for both Android and iOS.</p>
+    <p>Dice Roll started life as a way to teach myself Unity properly, which meant picking something small enough to actually finish. The rules are stupidly simple: hit the target number by rolling and combining dice values. The difficulty lives in deciding when to stop rolling and when to push your luck.</p>
     <ul>
-      <li>Match a randomly generated target number by rolling dice</li>
-      <li>Simple and addictive casual gameplay</li>
-      <li>Share your high scores with friends</li>
+      <li>Pick up and play, no tutorials, no account</li>
+      <li>Randomised target numbers keep each round different</li>
+      <li>Local high scores with shareable results</li>
+      <li>Cross-platform builds for Android and iOS</li>
     </ul>
+  </FeatureSection>
+</div>
+
+<div className="section-wrapper">
+  <FeatureSection title="What I Was Trying to Learn">
+    <div className="textContainer">
+      <p>This project was deliberately small. I wanted to finish one complete mobile game, end to end, without getting distracted by scope creep. Specifically:</p>
+    </div>
+    <ul>
+      <li>Unity's scene and prefab system on a real project</li>
+      <li>C# patterns for managing game state cleanly</li>
+      <li>iOS and Android publishing workflow (the bit every tutorial skips)</li>
+      <li>How to keep a "simple" game feeling tight and responsive when the mechanic is this thin</li>
+    </ul>
+    <div className="textContainer">
+      <p>It is not my favourite thing I have made. It is the thing that taught me enough to make the next one properly.</p>
+    </div>
   </FeatureSection>
 </div>

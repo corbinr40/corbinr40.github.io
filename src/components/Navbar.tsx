@@ -122,9 +122,6 @@ export default function Navbar() {
         <Link to="/#programs" className="navbar-arc__link">
           Programs
         </Link>
-        <Link to="/#games" className="navbar-arc__link">
-          Games
-        </Link>
         <Link to="/blog" className="navbar-arc__link" aria-current={location.pathname === '/blog' ? 'page' : undefined}>
           Blog
         </Link>

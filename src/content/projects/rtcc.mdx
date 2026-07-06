@@ -1,7 +1,7 @@
 ---
 id: "rtcc"
 title: "RTCC - Real Time Communication Captions"
-description: "A piece of software that converts voice to text in a visual output, as an aid to individuals who are hard of hearing. The plan is to deliver this via a piece of hardware in the form of glasses with a heads up display."
+description: "Real-time speech-to-text captioning for people who are hard of hearing, built in Python with OpenCV face tracking and a planned glasses-based HUD delivery."
 category: "programs"
 devTypes:
   - "university"
@@ -77,7 +77,7 @@ export const hardwareModelImages = [
 <div className="section-wrapper">
   <HeroSection
     title="Real Time Communication Captions (RTCC)"
-    paragraphs={['RTCC, or Real Time Communication Captions, is a project that converts voice to text and displays them similar to subtitles. The project acts as an aid to individuals whom are hard of hearing. This Raspberry Pi powered project, written in Python, will use a camera and a custom machine learning model to track a persons face and place their words beneath them with the use of a microphone and speech to text library. All of it being housed in a custom 3D printed case.']}
+    paragraphs={['RTCC (Real Time Communication Captions) is an accessibility project: a wearable that shows live subtitles beneath the face of whoever is speaking to you. It was built for people who are hard of hearing, as a more private and portable alternative to reading lips or looking at a phone. Powered by a Raspberry Pi Zero 2 W, written in Python, housed in a custom 3D-printed case, and built around a machine learning face detection model trained on roughly 4,500 images.']}
     imageSrc="/assets/pageAssets/rtcc/OriginalDesign.png"
     imageAlt="Showing Off Image"
   />
@@ -95,12 +95,19 @@ export const hardwareModelImages = [
     imageAlt="3D Printed Parts"
     imageCaption="3D Printed Parts"
   >
-    <p>From the start of the project, we set ourself a couple of development goals to adhere by:</p>
+    <p>We set two non-negotiable goals at the start:</p>
     <ul>
-      <li>The project works completely offline</li>
-      <li>Everything's powered by single device</li>
+      <li>Runs completely offline, with no cloud dependency</li>
+      <li>Powered by a single small device</li>
     </ul>
-    <p>RTCC is broken down into 4 main areas: <b>hardware</b>, <b>audio</b>,{' '}<b>visual</b>, and <b>UI</b>. The audio component focuses on taking audio in from the user, processing it and then outputting, along with handling audio commands for system processes. The visual component will use a camera to look for a face, detect where it is and pass the data onto the UI. The UI handles all of the aspects which the user sees and interacts with. And finally, the hardware component is making sure all of the software works efficiently and cohesive with one another.</p>
+    <p>Everything else flowed from those two constraints. The project is broken into four areas:</p>
+    <ul>
+      <li><b>Hardware:</b> the Raspberry Pi, microphone, camera, display, and battery that make it all physical</li>
+      <li><b>Audio:</b> capturing a voice, running speech-to-text locally, and listening for wake-word commands</li>
+      <li><b>Visual:</b> a custom machine learning model that finds faces in a camera feed and tracks them in real time</li>
+      <li><b>UI:</b> the small overlay rendered onto the eyepiece, showing captions positioned under the speaker's face</li>
+    </ul>
+    <p>The rest of this page walks through each of those in order.</p>
   </FeatureSection>
 </div>
 

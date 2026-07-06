@@ -1,45 +1,24 @@
-// interface SkillCardProps {
-//   title: string;
-//   skills: string[];
-// }
-
-// export default function SkillCard({ title, skills }: SkillCardProps) {
-//   const groups: string[][] = [];
-//   for (let i = 0; i < skills.length; i += 3) {
-//     groups.push(skills.slice(i, i + 3));
-//   }
-
-//   return (
-//     <div className="card h-100 shadow-sm">
-//       <div className="card-body">
-//         <h5 className="card-title">{title}</h5>
-//         <p className="card-text">
-//           {groups.map((group, idx) => (
-//             <span key={idx}>
-//               {idx > 0 && <br />}
-//               {group.join(", ")}
-//             </span>
-//           ))}
-//         </p>
-//       </div>
-//     </div>
-//   );
-// }
+import type { SkillEntry, SkillLevel } from '../content';
 
 interface SkillCardProps {
   title: string;
-  skills: string[];
+  skills: SkillEntry[];
 }
 
 const ACCENTS: Record<string, string> = {
   'Languages':         '#c0392b',
   'Frameworks':        '#9b59b6',
+  'Cloud & Services':  '#2980b9',
+  'Databases':         '#1a7a6e',
   'Programs':          '#d35400',
-  'Game Engines':      '#d35400',
-  'Services':          '#2980b9',
-  'Database':          '#1a7a6e',
   'Operating Systems': '#4a4e54',
-  "IDE's":             '#6c757d',
+  'IDEs & Tooling':    '#6c757d',
+};
+
+const LEVEL_COLOR: Record<SkillLevel, string> = {
+  expert:     '#c0392b',
+  proficient: '#9b59b6',
+  familiar:   '#4a4e54',
 };
 
 export default function SkillCard({ title, skills }: SkillCardProps) {
@@ -76,9 +55,10 @@ export default function SkillCard({ title, skills }: SkillCardProps) {
           </h5>
         </div>
         <div className="d-flex flex-wrap gap-1">
-          {skills.map((skill) => (
+          {skills.map(({ name, level }) => (
             <span
-              key={skill}
+              key={name}
+              className="d-inline-flex align-items-center gap-1"
               style={{
                 fontSize: 12,
                 padding: '3px 10px',
@@ -88,7 +68,18 @@ export default function SkillCard({ title, skills }: SkillCardProps) {
                 color: 'var(--color-text-primary)',
               }}
             >
-              {skill}
+              {name}
+              {level && (
+                <span
+                  style={{
+                    color: LEVEL_COLOR[level],
+                    fontSize: 10,
+                    lineHeight: 1,
+                  }}
+                >
+                  ★
+                </span>
+              )}
             </span>
           ))}
         </div>

@@ -4,7 +4,6 @@ import SkillCard from '../components/SkillCard';
 import ProjectSection from '../components/ProjectSection';
 import { projects, skillsets } from '../content';
 import type { Project } from '../content';
-import SkillTagCloud from '../components/SkillTagCloud';
 
 function buildBadges(project: Project) {
   if (project.externalLink) {
@@ -20,8 +19,8 @@ function buildBadges(project: Project) {
 }
 
 const heroParagraphs = [
-  "I'm a freelance software engineer available for UK-based and remote contracts. I build full-stack web applications, cloud-connected systems, and custom automation tools, working independently across the full development lifecycle, from backend architecture to polished frontend delivery.",
-  "My primary stack is Python and React/TypeScript, with hands-on production experience on AWS and Azure. First Class MEng Computer Science graduate, Leeds Beckett University, 2023.",
+  "I'm a software engineer based in Warwick, building full-stack web applications, cloud-connected systems, and custom automation tools. Alongside my full-time role, I take on a small number of freelance projects each year where I can own meaningful pieces of work end to end.",
+  "My core stack is Python and React/TypeScript, with production experience on AWS and Azure, PostgreSQL, and MySQL. First Class MEng Computer Science graduate, Leeds Beckett University, 2023.",
 ];
 
 const programsHeader = projects.find(
@@ -62,6 +61,7 @@ export default function Home() {
             }}
           >
             <span
+              className="pulse-dot"
               style={{
                 width: '7px',
                 height: '7px',
@@ -70,24 +70,23 @@ export default function Home() {
                 display: 'inline-block',
               }}
             />
-            Available for contracts
+            Open to select freelance projects
           </span>
         </div>
 
         <HeroSection
-          avatarSrc="/assets/icon256.png"
           title="Hey, I'm Corbin"
-          subtitle="Freelance Software Engineer · Python · React/TypeScript · AWS"
+          subtitle="Software Engineer · Python · React/TypeScript · AWS · Open to Freelance"
           paragraphs={heroParagraphs}
         />
 
         {/* CTA Buttons */}
-        <div className="mt-4 d-flex gap-3 flex-wrap">
-          <a href="/contact" className="btn btn-primary">
-            Get in touch →
-          </a>
+        <div className="mt-4 d-flex gap-3 flex-wrap justify-content-end">
           <a href="#programs" className="btn btn-outline-secondary">
             View my work ↓
+          </a>
+          <a href="/contact" className="btn btn-outline-secondary">
+            Get in touch →
           </a>
         </div>
       </div>
@@ -97,13 +96,23 @@ export default function Home() {
       {/* Skill Set */}
       <div className="container px-4 py-5">
         <h2 className="pb-2 border-bottom">Skill Set</h2>
-        <SkillTagCloud />
         <div className="row row-cols-1 row-cols-md-2 g-4 py-3">
           {skillsets.map((s) => (
             <div className="col" key={s.title}>
               <SkillCard title={s.title} skills={s.skills} />
             </div>
           ))}
+        </div>
+        <div className="skill-legend mt-3">
+          <span className="skill-legend__item">
+            <span style={{ color: '#c0392b', fontSize: 11 }}>★</span> Expert
+          </span>
+          <span className="skill-legend__item">
+            <span style={{ color: '#9b59b6', fontSize: 11 }}>★</span> Proficient
+          </span>
+          <span className="skill-legend__item">
+            <span style={{ color: '#4a4e54', fontSize: 11 }}>★</span> Familiar
+          </span>
         </div>
       </div>
 
@@ -124,22 +133,26 @@ export default function Home() {
         buildBadges={buildBadges}
       />
 
-      <hr className="section-divider" />
+      {visibleGames.length > 0 && (
+        <>
+          <hr className="section-divider" />
 
-      {/* Games — sticky sidebar on the right */}
-      <ProjectSection
-        id="games"
-        title="Games"
-        description={gamesHeader?.description ?? ''}
-        mainLink={
-          gamesHeader?.href
-            ? { label: gamesHeader.title, href: gamesHeader.href, text: `Visit ${gamesHeader.title}` }
-            : undefined
-        }
-        projects={visibleGames}
-        stickySide="right"
-        buildBadges={buildBadges}
-      />
+          {/* Games — sticky sidebar on the right */}
+          <ProjectSection
+            id="games"
+            title="Games"
+            description={gamesHeader?.description ?? ''}
+            mainLink={
+              gamesHeader?.href
+                ? { label: gamesHeader.title, href: gamesHeader.href, text: `Visit ${gamesHeader.title}` }
+                : undefined
+            }
+            projects={visibleGames}
+            stickySide="right"
+            buildBadges={buildBadges}
+          />
+        </>
+      )}
     </>
   );
 }

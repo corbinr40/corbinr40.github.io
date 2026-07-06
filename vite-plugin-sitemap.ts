@@ -25,14 +25,21 @@ export default function sitemapPlugin(): Plugin {
         ? fs.readdirSync(blogDir).filter((f) => f.endsWith('.mdx')).map((f) => f.replace('.mdx', ''))
         : [];
 
-      const projectUrls = projectSlugs.map((slug) => {
-        const content = fs.readFileSync(path.join(projectDir, `${slug}.mdx`), 'utf-8');
-        const categoryMatch = content.match(/category:\s*"([^"]+)"/);
-        const category = categoryMatch ? categoryMatch[1] : 'programs';
-        return `/projects/${category}/${slug}`;
-      });
+      const isVisible = (dir: string, slug: string) =>
+        !/visible:\s*false/.test(fs.readFileSync(path.join(dir, `${slug}.mdx`), 'utf-8'));
 
-      const blogUrls = blogSlugs.map((slug) => `/blog/${slug}`);
+      const projectUrls = projectSlugs
+        .filter((slug) => isVisible(projectDir, slug))
+        .map((slug) => {
+          const content = fs.readFileSync(path.join(projectDir, `${slug}.mdx`), 'utf-8');
+          const categoryMatch = content.match(/category:\s*"([^"]+)"/);
+          const category = categoryMatch ? categoryMatch[1] : 'programs';
+          return `/projects/${category}/${slug}`;
+        });
+
+      const blogUrls = blogSlugs
+        .filter((slug) => isVisible(blogDir, slug))
+        .map((slug) => `/blog/${slug}`);
 
       const allUrls = [...staticRoutes, ...projectUrls, ...blogUrls];
 

@@ -1,7 +1,7 @@
 ---
 id: "building-my-portfolio"
 title: "Building My Portfolio Site"
-description: "A look at how this portfolio site was built using React, MDX, and a custom content editor."
+description: "How a \"quick rebuild\" of my portfolio turned into an MDX content system, a custom block editor, and a blog I'm now writing in. In that order."
 skills:
   - "react"
   - "ts"
@@ -18,53 +18,53 @@ tags:
 <div className="section-wrapper">
   <HeroSection
     title="Building My Portfolio Site"
-    paragraphs={["A behind-the-scenes look at how this site was built, from a simple React app to a full content management system with a custom editor."]}
+    paragraphs={["I sat down to do a small refresh on my portfolio. A new coat of paint, maybe a dark mode toggle, nothing ambitious. Several weekends later I had built a full content management system with a drag-and-drop block editor and an MDX-based content pipeline. This is the story of how a 30-minute job turned into a side project of its own."]}
   />
 </div>
 
 <div className="section-wrapper">
   <FeatureSection title="The Stack">
-    <p>This portfolio is built with <b>React 19</b>, <b>TypeScript</b>, and <b>Bootstrap 5</b>, bundled with <b>Vite</b>. Content is written in <b>MDX</b> (Markdown with JSX), which lets me embed React components directly in my writing.</p>
-    <p>The site is hosted on <b>GitHub Pages</b> and deployed automatically via GitHub Actions whenever I push to the main branch.</p>
+    <p>The site is built with <b>React 19</b>, <b>TypeScript</b>, and <b>Bootstrap 5</b>, bundled with <b>Vite</b>. Content is written in <b>MDX</b>, which is basically Markdown that has learned how to host React components inside itself. It sounds like overkill until you try to put an image carousel into a blog post and realise plain Markdown wants no part of that.</p>
+    <p>Everything is hosted on <b>GitHub Pages</b> and deployed automatically when I push to main. No server, no database, no surprise bills at the end of the month.</p>
   </FeatureSection>
 </div>
 
 <div className="section-wrapper">
   <FeatureSection title="The Content System">
-    <p>Instead of hardcoding each project page as a separate React component, I built an MDX-based content system. Each project or blog post is a single <code>.mdx</code> file with YAML frontmatter for metadata and MDX for the content body.</p>
-    <p>Adding a new project means creating one file - no routing changes, no data file edits. The content registry auto-discovers all MDX files at build time using Vite's <code>import.meta.glob</code>.</p>
+    <p>The original version of this site had every project page as its own hand-written React component. It worked, but it meant that adding a new project was a four-file job: a new page component, a new route, a new entry in the data file, and usually some CSS tweaks. Not hard, just annoying enough that I kept putting off writing new projects.</p>
+    <p>The rebuild swapped all of that out for a single pattern: every project and blog post is one <code>.mdx</code> file. The top of the file has YAML frontmatter (title, date, tags, that kind of thing) and the rest is MDX, which means I can drop in React components wherever I want. A content registry picks up every <code>.mdx</code> file at build time and wires up routing automatically. Adding a new project is now a one-file job. Writing this post took longer than the code would have.</p>
+    <p>The system supports ten different content block types out of the box:</p>
     <ul>
-      <li>10 block types: Hero, Overview Table, Feature Section, Image Carousel, Image+Paragraph, Code Block, Video Embed, Callout, Quote</li>
-      <li>Automatic project card generation from frontmatter</li>
-      <li>Dynamic routing - one route handles all content pages</li>
+      <li>Hero sections with an image and intro text</li>
+      <li>An automatic overview table that reads from frontmatter</li>
+      <li>Feature sections (basically "heading + content", the workhorse block)</li>
+      <li>Image carousels for showing off multiple shots</li>
+      <li>Image-with-paragraph layouts (left or right aligned)</li>
+      <li>Code blocks with syntax highlighting</li>
+      <li>Video embeds for YouTube and Vimeo</li>
+      <li>Callout boxes for info, warnings, or tips</li>
+      <li>Pull quotes for when you want to be dramatic</li>
+      <li>Description lists for term-and-definition content</li>
     </ul>
   </FeatureSection>
 </div>
 
 <div className="section-wrapper">
   <FeatureSection title="The Editor">
-    <p>To make content creation even easier, I built a full GUI editor at <code>/editor</code>. It's a block-based editor (similar to Notion or WordPress Gutenberg) where you can:</p>
-    <ul>
-      <li>Fill out project metadata through a form</li>
-      <li>Add and reorder content blocks with drag-and-drop</li>
-      <li>Write rich text with a toolbar (bold, italic, links, lists)</li>
-      <li>Upload images with drag-and-drop</li>
-      <li>Preview content live using the actual site components</li>
-      <li>Save drafts locally and export as MDX or ZIP</li>
-      <li>Publish directly to GitHub via the API</li>
-    </ul>
-    <p>The editor is lazy-loaded and hidden from search engines, so it doesn't affect the site's performance or SEO for visitors.</p>
+    <p>At this point I should have stopped. The MDX system worked. I could write new posts. Job done.</p>
+    <p>Instead, I built a full block-based editor at <code>/editor</code>. It works a bit like Notion or WordPress Gutenberg: drag-and-drop blocks, a rich text editor on top of TipTap, live preview using the actual site components, image uploads, draft management with auto-save to IndexedDB, and the ability to publish directly to my GitHub repo via the Contents API. When I hit "Publish" on a new post, it creates a commit, pushes it, and GitHub Actions redeploys the site. End to end, writing and shipping a post takes about as long as it takes to drink a coffee.</p>
+    <p>The editor is lazy-loaded and hidden from search engines, so regular visitors pay no cost for its existence. But it's there if I need it, and it's saved me from the traditional blogger's dilemma of "I have a thing to write about but I can't be bothered to open my IDE to do it".</p>
   </FeatureSection>
 </div>
 
 <div className="section-wrapper">
   <FeatureSection title="What's Next">
-    <p>This site is always evolving. Some things I'm looking at next:</p>
+    <p>Now that the plumbing is done, the rest of this site is mostly a content problem rather than a code problem. The things I actually want to do:</p>
     <ul>
-      <li>More project write-ups for my game development work</li>
-      <li>3D model showcases with embedded viewers</li>
-      <li>More blog posts about development and design</li>
+      <li>Finish the project write-ups for my game jam entries</li>
+      <li>Build out dedicated pages for my 3D models, probably with embedded Sketchfab viewers</li>
+      <li>Write more of these. I have opinions about software and I may as well share them.</li>
     </ul>
-    <p>If you're interested in the source code, you can find it on my <a href="https://github.com/corbinr40/corbinr40.github.io"><u>GitHub</u></a>.</p>
+    <p>The whole thing is open source. If you're curious how any of this works, the code is on my <a href="https://github.com/corbinr40/corbinr40.github.io"><u>GitHub</u></a>.</p>
   </FeatureSection>
 </div>

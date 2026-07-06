@@ -18,6 +18,7 @@ export default function Footer() {
               <img
                 src="/assets/icon256.png"
                 alt="corbinr40 logo"
+                className="footer-logo"
                 width="40"
                 height="40"
               />
@@ -28,11 +29,6 @@ export default function Footer() {
             <li className="ms-3">
               <Link to="/#programs" className="text-body-secondary">
                 Programs
-              </Link>
-            </li>
-            <li className="ms-3">
-              <Link to="/#games" className="text-body-secondary">
-                Games
               </Link>
             </li>
             <li className="ms-3">
@@ -56,15 +52,6 @@ export default function Footer() {
         <div className="row mt-3">
           <div className="col text-center">
             <a
-              href="https://www.twitter.com/corbinr40"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-body-secondary me-3"
-              aria-label="Twitter"
-            >
-              <i className="bi bi-twitter" />
-            </a>
-            <a
               href="https://www.linkedin.com/in/CorbinRichardson"
               target="_blank"
               rel="noopener noreferrer"
@@ -86,26 +73,10 @@ export default function Footer() {
               href="https://www.github.com/corbinr40"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-body-secondary me-3"
+              className="text-body-secondary"
               aria-label="GitHub"
             >
               <i className="bi bi-github" />
-            </a>
-            <a
-              href="https://www.sketchfab.com/corbinr40"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-body-secondary me-3"
-            >
-              Sketchfab
-            </a>
-            <a
-              href="https://corbinr40.itch.io"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-body-secondary"
-            >
-              Itch.io
             </a>
           </div>
         </div>

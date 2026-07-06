@@ -1,7 +1,7 @@
 ---
 id: "letsplay"
 title: "Lets Play"
-description: "Mobile and Web App to help users find what games are available on what platforms, subscription services, and their prices all in one place. Developed using Native."
+description: "Multi-platform game price tracker across PS Store, Xbox, Steam, and Nintendo Switch. React Native frontend, Python and TimescaleDB backend, IGDB-powered registry."
 category: "programs"
 devTypes:
   - "personal"
@@ -13,8 +13,8 @@ status: "ongoing"
 type: "Application/Personal"
 duration: "~2 months"
 software: "Visual Studio Code"
-languages: "React Native, Type Script"
-availableOn: "Coming soon to App Store\u00AE and Google Play"
+languages: "React Native, TypeScript"
+availableOn: "Coming soon to App Store® and Google Play"
 contentType: "project"
 visible: true
 ---
@@ -22,7 +22,7 @@ visible: true
 <div className="section-wrapper">
   <HeroSection
     title="Lets Play"
-    paragraphs={["Mobile and Web App to help users find what games are available on what platforms, subscription services, and their prices all in one place. Developed using React Native."]}
+    paragraphs={["A multi-platform game price tracker that answers a deceptively simple question: \"Where can I play this, and what's it going to cost me?\" Built with a React Native frontend and a Python backend, LetsPlay pulls live data from the PlayStation, Xbox, Steam, and Nintendo Switch storefronts, then layers subscription tier tracking (Game Pass, PS Plus) on top so you see the real cost, not the sticker price."]}
   />
 </div>
 
@@ -32,11 +32,51 @@ visible: true
 
 <div className="section-wrapper">
   <FeatureSection title="Features">
-    <p>Data is collected from the Xbox and PlayStation stores to provide up-to-date information on available games.</p>
+    <p>LetsPlay grew out of a frustration familiar to anyone with more than one console: checking four different stores, in four different currencies, to find out which platform has the best deal on a game this week. Rather than keep doing that manually, I built the thing that does it for me.</p>
     <ul>
-      <li>Search for games across multiple platforms</li>
-      <li>View prices and availability at a glance</li>
-      <li>Filter by platform, price, and subscription service</li>
+      <li>Search across PS Store, Xbox, Steam, and Nintendo Switch in one place</li>
+      <li>Real-time pricing with automatic multi-region currency support</li>
+      <li>Subscription tier awareness so Game Pass and PS Plus availability shows up alongside sale prices</li>
+      <li>IGDB-powered canonical game registry to handle the "is this the same game?" problem across platforms</li>
+      <li>Watchlists and price drop notifications</li>
     </ul>
+  </FeatureSection>
+</div>
+
+<div className="section-wrapper">
+  <FeatureSection title="Why IGDB as the Canonical Registry">
+    <div className="textContainer">
+      <p>One of the hardest parts of this project wasn't scraping prices, it was agreeing on what counts as "the same game" across storefronts. The PlayStation Store calls it "Hitman 3 Standard Edition". Xbox calls it "HITMAN 3". Steam calls it "HITMAN World of Assassination" because they bundled two sequels into one package. Nintendo's version is the cloud-only edition and has a different title again.</p>
+      <p>Rather than build my own fuzzy-matching logic, I leaned on IGDB (Internet Game Database) as the source of truth. Every store entry gets matched to a canonical IGDB record, which means prices, platforms, and regions all key off a single stable ID. That decision alone saved weeks of edge-case handling.</p>
+    </div>
+  </FeatureSection>
+</div>
+
+<div className="section-wrapper">
+  <FeatureSection title="The Stack">
+    <p><b>Frontend:</b></p>
+    <ul>
+      <li>React Native with TypeScript for iOS, Android, and Web (single codebase)</li>
+      <li>Local state with React Query for server cache management</li>
+    </ul>
+    <p><b>Backend:</b></p>
+    <ul>
+      <li>Python (FastAPI) for the public API</li>
+      <li>TimescaleDB for price history, chosen specifically for time-series compression and efficient range queries</li>
+      <li>PostgreSQL for everything else (users, watchlists, game metadata)</li>
+      <li>Scheduled scrapers (see the PS and Xbox Web Scraper project) feed the database nightly</li>
+    </ul>
+    <p><b>Infrastructure:</b></p>
+    <ul>
+      <li>AWS (EC2 for the API, RDS for Postgres, S3 for static assets)</li>
+    </ul>
+  </FeatureSection>
+</div>
+
+<div className="section-wrapper">
+  <FeatureSection title="Status">
+    <div className="textContainer">
+      <p>Ongoing. The scrapers are running, the API is up, the mobile app is functional on Android with iOS builds in testing. Public launch is paced around my day job, so I've set it up to be genuinely useful for me first and a shippable product second.</p>
+    </div>
   </FeatureSection>
 </div>

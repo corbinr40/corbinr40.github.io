@@ -61,6 +61,7 @@ export default function Search() {
   const [searchQuery, setSearchQuery] = useState('');
 
   const filtered = projects.filter((p) => {
+    if (!p.visible) return false;
     if (!matchesFilter(p, activeFilter)) return false;
     if (searchQuery.trim()) {
       const q = searchQuery.toLowerCase();
