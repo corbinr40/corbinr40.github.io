@@ -11,7 +11,9 @@ import BlogList from './pages/BlogList';
 import RssPage from './pages/RssPage';
 import { usePageTracking } from './hooks/usePageTracking';
 
-const Editor = lazy(() => import('./pages/Editor'));
+// Dev-only: import.meta.env.DEV is statically false in prod builds, so the
+// dynamic import is dead code and Rollup drops the Editor + jszip chunks.
+const Editor = import.meta.env.DEV ? lazy(() => import('./pages/Editor')) : null;
 
 function AppRoutes() {
   usePageTracking();
@@ -26,20 +28,22 @@ function AppRoutes() {
         <Route path="/blog" element={<BlogList />} />
         <Route path="/blog/:slug" element={<ContentPage />} />
         <Route path="/rss" element={<RssPage />} />
-        <Route
-          path="/editor"
-          element={
-            <Suspense fallback={
-              <div className="d-flex justify-content-center align-items-center py-5">
-                <div className="spinner-border text-secondary" role="status">
-                  <span className="visually-hidden">Loading...</span>
+        {Editor && (
+          <Route
+            path="/editor"
+            element={
+              <Suspense fallback={
+                <div className="d-flex justify-content-center align-items-center py-5">
+                  <div className="spinner-border text-secondary" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                  </div>
                 </div>
-              </div>
-            }>
-              <Editor />
-            </Suspense>
-          }
-        />
+              }>
+                <Editor />
+              </Suspense>
+            }
+          />
+        )}
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
