@@ -7,6 +7,24 @@ export default function PrivacyPolicy() {
       <div className="container px-4 py-5">
         <h1 className="display-5 fw-bold text-body-emphasis mb-4">Privacy Policy</h1>
         <div className="col-lg-8 mx-auto">
+          <h2 className="mt-2">This Website</h2>
+          <p>
+            This website (corbinr40.com) does not use cookies and does not collect
+            personal information. Anonymous, aggregated visit statistics — page
+            views, referrers, and performance timings — are measured with
+            Cloudflare Web Analytics, which uses no cookies or client-side storage
+            and does not track visitors across sites. See{' '}
+            <a href="https://www.cloudflare.com/web-analytics/" target="_blank" rel="noopener noreferrer">
+              Cloudflare Web Analytics
+            </a>{' '}
+            for details. The site is hosted on GitHub Pages, which may log IP
+            addresses for security and operational purposes; see the{' '}
+            <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener noreferrer">
+              GitHub Privacy Statement
+            </a>.
+          </p>
+
+          <h2 className="mt-4">Dice Roll App</h2>
           <p>
             Corbin Richardson built the Dice Roll app as a Free app. This SERVICE is provided by
             Corbin Richardson at no cost and is intended for use as is.
