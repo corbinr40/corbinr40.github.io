@@ -1,0 +1,64 @@
+---
+id: "scraper"
+title: "PS and Xbox Web Scraper"
+description: "A Python and Selenium scraper that quietly pulls game data from the Xbox and PlayStation stores. Feeds the registry that powers LetsPlay."
+category: "programs"
+devTypes:
+  - "personal"
+skills:
+  - "python"
+  - "selenium"
+image: "/unsplash-photo-2.jpg"
+status: "ongoing"
+type: "Personal/Script"
+duration: "~2 months"
+software: "Python IDE, Selenium"
+languages: "Python"
+availableOn: "GitHub"
+contentType: "project"
+visible: true
+---
+
+<div className="section-wrapper">
+  <HeroSection
+    title="PlayStation Xbox Scraper"
+    paragraphs={["A Python and Selenium scraper that quietly does the boring part of LetsPlay's job: visiting the PlayStation and Xbox stores every night and pulling down every game's name, price, description, and artwork. It's the least exciting project on this site and also the one that has to work correctly every time, or nothing downstream makes sense."]}
+  />
+</div>
+
+<div className="section-wrapper">
+  <OverviewTable />
+</div>
+
+<div className="section-wrapper">
+  <FeatureSection title="Features">
+    <p>What started as a weekend script to compare Xbox and PlayStation prices has turned into a production data pipeline feeding a larger project (LetsPlay). The same tool that used to run on my laptop now runs on a schedule, produces structured output, and gets paged when something breaks.</p>
+    <ul>
+      <li>Headless scraping of Xbox Store and PlayStation Store using Selenium</li>
+      <li>Runs on a nightly schedule with retry and backoff for flaky pages</li>
+      <li>Handles store localisation and currency conversion for multi-region support</li>
+      <li>Exports to PostgreSQL (feeding LetsPlay) with CSV snapshots for backfills</li>
+      <li>Alerts on schema drift when a store redesigns a page</li>
+    </ul>
+  </FeatureSection>
+</div>
+
+<div className="section-wrapper">
+  <FeatureSection title="Why Selenium (and not an API)">
+    <div className="textContainer">
+      <p>Neither PlayStation nor Xbox offers a public pricing API. There are some unofficial endpoints floating around, but they're undocumented, unstable, and break without warning. The most reliable data source turned out to be the public-facing storefront itself, rendered in a real browser.</p>
+      <p>Selenium is heavy for a scraper, but it's the closest thing to a guarantee that what I see in a browser is what the scraper will see. The tradeoff is speed (scraping ~10,000 products across both platforms takes hours, not minutes), which is fine for a nightly job and unacceptable for anything real-time. That's a deliberate design constraint, not a limitation.</p>
+    </div>
+  </FeatureSection>
+</div>
+
+<div className="section-wrapper">
+  <FeatureSection title="What I Learned">
+    <ul>
+      <li>Scraping is 10% parsing and 90% dealing with things that changed since yesterday</li>
+      <li>Good logging matters more than clever code when you're debugging a failure that happened at 3am and you're seeing it at 9am</li>
+      <li>Database snapshots before each run have saved me from data corruption at least four times</li>
+      <li>If a website has a sitemap.xml, use it. I spent weeks crawling before I found Xbox's</li>
+    </ul>
+  </FeatureSection>
+</div>

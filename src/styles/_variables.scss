@@ -1,0 +1,56 @@
+// ===== Design Tokens - Light Mode (default) =====
+:root,
+[data-bs-theme="light"] {
+  --color-text-primary: #111111;
+  --color-text-secondary: #333333;
+  --color-text-muted: #666666;
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f9f8f6;
+  --color-bg-navbar: #ffffff;
+  --color-bg-elevated: #eeeae4;
+  --color-link: #111111;
+  --color-link-hover: #333333;
+  --color-border: rgba(0, 0, 0, 0.12);
+  --color-btn-border: #111111;
+  --color-btn-hover-border: #333333;
+  --color-card-hover-bg: #eeeae4;
+  --color-card-hover-shadow: rgba(0, 0, 0, 0.15);
+  --color-carousel-overlay: rgba(0, 0, 0, 0.35);
+  --color-carousel-caption: rgba(0, 0, 0, 0.2);
+  --color-social-filter: invert(10%) sepia(86%) saturate(5633%) hue-rotate(245deg) brightness(93%) contrast(155%);
+
+  // Accent palette
+  --color-accent-red: #e8453c;
+  --color-accent-purple: #9b59b6;
+  --color-accent-orange: #e67e22;
+  --color-accent-blue: #2e86c1;
+  --color-accent-teal: #17a589;
+}
+
+// ===== Design Tokens - Dark Mode =====
+[data-bs-theme="dark"] {
+  --color-text-primary: #e0e0e0;
+  --color-text-secondary: #aaaaaa;
+  --color-text-muted: #888888;
+  --color-bg-primary: #121212;
+  --color-bg-secondary: #1e1e1e;
+  --color-bg-navbar: #1a1a1a;
+  --color-bg-elevated: #2a2a2a;
+  --color-link: #e0e0e0;
+  --color-link-hover: #aaaaaa;
+  --color-border: rgba(255, 255, 255, 0.15);
+  --color-btn-border: #e0e0e0;
+  --color-btn-hover-border: #aaaaaa;
+  --color-card-hover-bg: rgb(40, 42, 44);
+  --color-card-hover-shadow: rgba(0, 0, 0, 0.8);
+  --color-carousel-overlay: rgba(0, 0, 0, 0.6);
+  --color-carousel-caption: rgba(0, 0, 0, 0.4);
+  --color-social-filter: invert(90%) sepia(10%) saturate(200%) hue-rotate(180deg) brightness(110%) contrast(90%);
+
+  // Accent palette
+  --color-accent-red: #c0392b;
+  --color-accent-purple: #8e44ad;
+  --color-accent-orange: #d35400;
+  --color-accent-blue: #2980b9;
+  --color-accent-teal: #1a7a6e;
+}

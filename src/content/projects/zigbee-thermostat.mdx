@@ -1,0 +1,174 @@
+---
+id: "zigbee-thermostat"
+title: "DIY Zigbee Smart Thermostat"
+description: "A fully custom Zigbee-enabled smart thermostat built from scratch: KiCad PCB, ESP-IDF firmware, and native Home Assistant integration. No cloud, no bridge."
+category: "programs"
+devTypes:
+  - "personal"
+skills:
+  - "c"
+  - "esp-idf"
+  - "kicad"
+  - "zigbee"
+  - "esp32"
+image: "/unsplash-photo-3.jpg"
+status: "ongoing"
+type: "Personal/Hardware"
+duration: "Ongoing"
+software: "KiCad, VS Code, ESP-IDF"
+languages: "C, Zigbee SDK"
+availableOn:
+  label: "GitHub"
+  href: "https://github.com/corbinr40"
+contentType: "project"
+visible: false
+---
+
+export const pcbImages = [
+  {
+    src: '/assets/pageAssets/zigbee-thermostat/pcb-layout.png',
+    alt: 'KiCad PCB layout of the 58mm circular board',
+    title: 'PCB Layout',
+    caption: 'Custom 58mm circular PCB designed in KiCad, sized to fit a standard UK backplate.',
+  },
+  {
+    src: '/assets/pageAssets/zigbee-thermostat/schematic.png',
+    alt: 'Full schematic for the thermostat circuit',
+    title: 'Schematic',
+    caption: 'Full schematic including the ESP32-C6, AS5600 rotary encoder, and Charlieplexed display sub-board.',
+  },
+  {
+    src: '/assets/pageAssets/zigbee-thermostat/display-board.png',
+    alt: 'The 7-segment display sub-board',
+    title: 'Display Sub-Board',
+    caption: 'Bespoke 7-segment display sub-board using Charlieplexing to maximise digit count with minimal GPIO usage.',
+  },
+];
+
+<div className="section-wrapper">
+  <HeroSection
+    title="DIY Zigbee Smart Thermostat"
+    paragraphs={[
+      "Off-the-shelf smart thermostats are expensive, locked into proprietary ecosystems, and offer little room for customisation. This project set out to fix that - a fully custom Zigbee-enabled thermostat built entirely from scratch, covering every layer of the stack from PCB design to production firmware.",
+      "The device communicates over the Zigbee protocol and integrates natively with Home Assistant as a first-class thermostat entity, with no cloud dependency or proprietary bridge required."
+    ]}
+    imageSrc="/assets/pageAssets/zigbee-thermostat/hero.png"
+    imageAlt="DIY Zigbee Smart Thermostat mounted on a wall"
+  />
+</div>
+
+<div className="section-wrapper">
+  <OverviewTable />
+</div>
+
+<div className="section-wrapper">
+  <FeatureSection title="The Problem">
+    <div className="textContainer">
+      <p>Commercial smart thermostats come with a long list of frustrations:</p>
+      <DescList items={[
+        { term: "Cost", desc: "branded units from Nest, Hive, or Tado regularly cost £150-250" },
+        { term: "Vendor lock-in", desc: "most require proprietary apps or cloud accounts to function" },
+        { term: "Limited Home Assistant support", desc: "integrations often rely on cloud polling or unofficial APIs" },
+        { term: "No customisability", desc: "you get the firmware you're given, nothing more" },
+      ]} />
+      <p>Building from scratch solves all of these. The total BOM cost is a fraction of a commercial unit, and every aspect of the hardware and firmware is fully under my control.</p>
+    </div>
+  </FeatureSection>
+</div>
+
+<div className="section-wrapper">
+  <FeatureSection title="Hardware Design">
+    <div className="textContainer">
+      <p>The hardware was designed entirely in <b>KiCad</b>, from schematic capture through to PCB layout, design rule checks, and Gerber export.</p>
+      <p>Key hardware decisions:</p>
+      <DescList items={[
+        { term: "ESP32-C6 microcontroller", desc: "chosen specifically for its native Zigbee support via the ESP-IDF Zigbee SDK, eliminating the need for a separate Zigbee radio chip" },
+        { term: "58mm circular PCB", desc: "compact form factor sized to fit inside a standard UK single-gang backplate" },
+        { term: "AS5600 hall-effect rotary encoder", desc: "contactless magnetic sensing for the temperature dial, paired with a physical detent mechanism for satisfying tactile feedback" },
+        { term: "Custom 7-segment display sub-board", desc: "uses Charlieplexing to drive the maximum number of digit segments while consuming the minimum number of GPIO pins on the ESP32-C6" },
+      ]} />
+    </div>
+    <div className="section-wrapper">
+      <FeatureSection title="PCB & Schematics">
+        <ImageCarousel id="pcb-images" images={pcbImages} />
+      </FeatureSection>
+    </div>
+  </FeatureSection>
+</div>
+
+<div className="section-wrapper">
+  <FeatureSection title="Firmware">
+    <div className="textContainer">
+      <p>The firmware is written in <b>C</b> using Espressif's <b>ESP-IDF</b> framework. It implements the standard Zigbee thermostat cluster, which means Home Assistant discovers the device natively without any custom integration or MQTT bridge.</p>
+      <p>Key firmware responsibilities:</p>
+      <DescList items={[
+        { term: "Zigbee thermostat cluster", desc: "implements the ZCL thermostat cluster for native HA discovery and control" },
+        { term: "Rotary input handling", desc: "debouncing and direction detection for the AS5600 hall-effect encoder" },
+        { term: "Display multiplexing", desc: "real-time Charlieplex multiplexing to drive the 7-segment display" },
+        { term: "Network management", desc: "Zigbee network join and rejoin logic with persistent state across power cycles" },
+        { term: "Power management", desc: "deep sleep between polling intervals to minimise power draw on the mains supply" },
+      ]} />
+    </div>
+  </FeatureSection>
+</div>
+
+<div className="section-wrapper">
+  <FeatureSection title="Zigbee & Home Assistant Integration">
+    <div className="textContainer">
+      <p>One of the core design goals was <b>zero cloud dependency</b>. The device joins the local Zigbee network directly via a Zigbee coordinator (such as a Sonoff Zigbee 3.0 USB Dongle Plus) and is discovered by Home Assistant's built-in Zigbee Home Automation (ZHA) integration.</p>
+      <p>Once paired, it exposes the following entities in Home Assistant:</p>
+      <ul>
+        <li>Current temperature (read from onboard sensor)</li>
+        <li>Target temperature setpoint (controllable via HA or the physical dial)</li>
+        <li>Thermostat mode (heat / off)</li>
+      </ul>
+      <p>All control is local - no internet connection required, no vendor servers involved.</p>
+    </div>
+  </FeatureSection>
+</div>
+
+<div className="section-wrapper">
+  <FeatureSection title="Key Firmware Snippet">
+    <p>Example of the Zigbee thermostat attribute registration in ESP-IDF:</p>
+    <CodeBlock language="c" code={`/* Register thermostat cluster attributes */
+esp_zb_thermostat_cluster_add_attr(
+    cluster_list,
+    ESP_ZB_ZCL_ATTR_THERMOSTAT_LOCAL_TEMPERATURE_ID,
+    &local_temp
+);
+
+esp_zb_thermostat_cluster_add_attr(
+    cluster_list,
+    ESP_ZB_ZCL_ATTR_THERMOSTAT_OCCUPIED_HEATING_SETPOINT_ID,
+    &heating_setpoint
+);
+
+esp_zb_thermostat_cluster_add_attr(
+    cluster_list,
+    ESP_ZB_ZCL_ATTR_THERMOSTAT_SYSTEM_MODE_ID,
+    &system_mode
+);`} />
+  </FeatureSection>
+</div>
+
+<div className="section-wrapper">
+  <FeatureSection title="What I Learned">
+    <div className="textContainer">
+      <p>Designing at the hardware/firmware boundary forces a level of rigour that pure software projects don't. There's no stack trace when a PCB trace is wrong - you have to reason from first principles.</p>
+      <p>This project deepened my understanding across several areas:</p>
+      <DescList items={[
+        { term: "PCB design fundamentals", desc: "component placement, trace routing, power plane design, and manufacturing tolerances" },
+        { term: "Low-level embedded C", desc: "direct register manipulation, interrupt-driven I/O, and RTOS task management under ESP-IDF" },
+        { term: "Zigbee protocol internals", desc: "ZCL cluster architecture, attribute reporting, and network commissioning" },
+        { term: "Charlieplexing", desc: "multiplexing N*(N-1) LEDs using only N GPIO pins" },
+        { term: "Power budgeting", desc: "balancing active current draw against deep sleep intervals for a mains-powered device" },
+      ]} />
+    </div>
+  </FeatureSection>
+</div>
+
+<div className="section-wrapper">
+  <CalloutBox type="info">
+    <p>This project is actively in development. PCB revisions and firmware updates are ongoing - check the <a href="https://github.com/corbinr40"><u>GitHub repository</u></a> for the latest state of the design files and source code.</p>
+  </CalloutBox>
+</div>

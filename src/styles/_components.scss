@@ -1,0 +1,456 @@
+// ===== Hero Section =====
+
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  &__text-col {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-text-primary);
+    margin-bottom: 0.25rem;
+
+    @media (min-width: 768px) {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__subtitle {
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    color: var(--color-text-secondary);
+    margin-bottom: 1rem;
+  }
+
+  &__body {
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.7;
+
+    p {
+      margin-bottom: 0.75rem;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+// ===== Section Divider =====
+
+.section-divider {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: 0 auto;
+  width: 100%;
+  max-width: 720px;
+  opacity: 0.6;
+}
+
+// ===== Content Layout (TOC Sidebar + Main) =====
+
+.content-layout {
+  display: flex;
+  flex-direction: column;
+
+  &__toc {
+    display: none;
+  }
+
+  &__main {
+    flex: 1;
+    min-width: 0;
+  }
+
+  @media (min-width: 992px) {
+    display: grid;
+    grid-template-columns: 1fr;
+
+    &__toc {
+      display: block;
+      grid-row: 1;
+      grid-column: 1;
+      justify-self: start;
+      align-self: start;
+      width: 200px;
+      position: sticky;
+      top: 2rem;
+      max-height: calc(100vh - 4rem);
+      overflow-y: auto;
+      padding-left: 1rem;
+      z-index: 1;
+    }
+
+    &__main {
+      grid-row: 1;
+      grid-column: 1;
+      justify-self: center;
+      width: 100%;
+      max-width: 720px;
+
+      .col-lg-6 {
+        width: 100%;
+      }
+
+      .section-wrapper ul,
+      .section-wrapper ol {
+        text-align: left;
+        list-style: disc;
+        padding-left: 1.5rem;
+        margin: 0.75rem auto;
+        max-width: 600px;
+      }
+    }
+  }
+}
+
+// ===== Table of Contents =====
+
+.toc {
+  padding: 1rem 0;
+
+  &__heading {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-secondary);
+    margin-bottom: 0.75rem;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border-left: 2px solid var(--color-border);
+  }
+
+  &__item {
+    padding-left: 1rem;
+
+    &--nested {
+      padding-left: 2rem;
+    }
+
+    &--active > .toc__link {
+      color: var(--color-text-primary);
+      font-weight: 600;
+    }
+
+    &--active {
+      border-left: 2px solid var(--color-text-primary);
+      margin-left: -2px;
+    }
+  }
+
+  &__link {
+    display: block;
+    padding: 0.25rem 0;
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: color 0.15s ease;
+
+    &:hover {
+      color: var(--color-text-primary);
+    }
+  }
+}
+
+// ===== Arc Navbar =====
+
+.navbar-arc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0 0 0.5rem;
+  border-bottom: 1px solid var(--color-border);
+  background-color: var(--color-bg-navbar);
+  transition: background-color 0.3s ease;
+
+  &__ring {
+    position: relative;
+    width: 300px;
+    height: 165px;
+  }
+
+  &__logo {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 80px;
+    display: block;
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--color-border);
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    &:hover img {
+      border-color: var(--color-btn-hover-border);
+      transform: scale(1.05);
+    }
+  }
+
+  &__social {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    --arc-radius: 80px;
+    transform:
+      translate(-50%, 50%)
+      rotate(var(--arc-angle))
+      translateY(calc(-1 * var(--arc-radius)))
+      rotate(calc(-1 * var(--arc-angle)));
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    font-size: 14px;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform:
+        translate(-50%, 50%)
+        rotate(var(--arc-angle))
+        translateY(calc(-1 * var(--arc-radius)))
+        rotate(calc(-1 * var(--arc-angle)))
+        scale(1.15);
+    }
+  }
+
+  // Hamburger button - hidden on desktop
+  &__hamburger {
+    display: none;
+    background: none;
+    border: 1px solid var(--color-border);
+    border-radius: 0.375rem;
+    padding: 0.25rem 0.5rem;
+    font-size: 1.25rem;
+    color: var(--color-text-primary);
+    cursor: pointer;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    transition: background-color 0.15s ease;
+
+    &:hover {
+      background-color: var(--color-bg-secondary);
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 0.75rem;
+  }
+
+  &__link {
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 0.375rem;
+    transition: background-color 0.15s ease;
+
+    &:hover {
+      background-color: var(--color-bg-secondary);
+    }
+  }
+}
+
+// Responsive: hamburger menu on small screens
+@media (max-width: 768px) {
+  .navbar-arc {
+    // Hamburger visible
+    &__hamburger {
+      display: block;
+    }
+
+    // Nav hidden by default, shown when --open
+    &__nav {
+      display: none;
+      flex-direction: column;
+      gap: 0;
+      width: 100%;
+      margin-top: 0;
+      border-top: 1px solid var(--color-border);
+
+      &--open {
+        display: flex;
+        padding-bottom: 0.5rem !important;
+      }
+    }
+
+    &__link {
+      width: 100%;
+      text-align: center;
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--color-border);
+      border-radius: 0;
+      font-size: 1.1rem;
+    }
+  }
+}
+
+// Responsive: tighten arc on very small screens but keep readable
+@media (max-width: 480px) {
+  .navbar-arc {
+    &__ring {
+      width: 260px;
+      height: 150px;
+    }
+
+    &__logo {
+      width: 72px;
+      height: 72px;
+    }
+
+    &__social {
+      bottom: 36px;
+      --arc-radius: 70px;
+      width: 32px;
+      height: 32px;
+      font-size: 13px;
+
+      &:hover {
+        transform:
+          translate(-50%, 50%)
+          rotate(var(--arc-angle))
+          translateY(calc(-1 * var(--arc-radius)))
+          rotate(calc(-1 * var(--arc-angle)))
+          scale(1.15);
+      }
+    }
+  }
+}
+
+// ===== Project Section (Sticky Sidebar Layout) =====
+
+.project-section {
+  display: flex;
+  flex-direction: column;
+
+  &__sidebar {
+    margin-bottom: 2rem;
+  }
+
+  &__cards {
+    flex: 1;
+  }
+
+  // Desktop / landscape layout
+  @media (min-width: 992px) {
+    flex-direction: row;
+    gap: 3rem;
+
+    &__sidebar {
+      flex: 0 0 28%;
+      position: sticky;
+      top: 2rem;
+      align-self: flex-start;
+      margin-bottom: 0;
+    }
+
+    &__cards {
+      flex: 1;
+    }
+
+    // Right variant: sidebar on right side
+    &--right {
+      .project-section__sidebar {
+        order: 2;
+      }
+
+      .project-section__cards {
+        order: 1;
+      }
+    }
+  }
+}
+
+// ===== Card Hover =====
+
+.card-hover {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, border-radius 0.2s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    transform: translateY(-4px);
+    border-radius: 1.5rem;
+    box-shadow: 0 1rem 2rem var(--color-card-hover-shadow);
+  }
+}
+
+// ===== Carousel =====
+
+.carousel {
+  .carousel-inner > .carousel-item {
+    > img {
+      background-color: var(--color-carousel-overlay);
+      width: 100%;
+      object-fit: contain;
+      height: 550px;
+    }
+
+    > div {
+      background-color: var(--color-carousel-caption);
+    }
+  }
+
+  .carousel-caption {
+    left: 0;
+    right: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: #fff;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: auto;
+    top: 50%;
+    bottom: auto;
+    transform: translateY(-50%);
+    padding: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    opacity: 0.8;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .carousel-control-prev {
+    left: 0.5rem;
+  }
+
+  .carousel-control-next {
+    right: 0.5rem;
+  }
+}
+
+// ===== Social Icon Filter =====
+
+.social-colour {
+  filter: var(--color-social-filter);
+}
+
