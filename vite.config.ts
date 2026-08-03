@@ -8,7 +8,7 @@ import drafts from './vite-plugin-drafts'
 
 export default defineConfig({
   plugins: [
-    // drafts() is enforce:'pre' — stubs visible:false MDX in prod builds
+    // drafts() is enforce:'pre' - stubs visible:false MDX in prod builds
     drafts(),
     // mdx() must precede react() so .mdx files are transformed before JSX processing
     mdx({

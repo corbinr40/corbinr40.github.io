@@ -266,7 +266,7 @@ export default function FrontmatterForm({ frontmatter, onChange, onImageUpload, 
 
           {/* Available On */}
           <div className="mb-2">
-            <label className="form-label small fw-bold mb-1">Available On — Label</label>
+            <label className="form-label small fw-bold mb-1">Available On - Label</label>
             <input
               type="text"
               className="form-control form-control-sm"
@@ -277,7 +277,7 @@ export default function FrontmatterForm({ frontmatter, onChange, onImageUpload, 
             />
           </div>
           <div className="mb-2">
-            <label className="form-label small fw-bold mb-1">Available On — URL</label>
+            <label className="form-label small fw-bold mb-1">Available On - URL</label>
             <input
               type="text"
               className="form-control form-control-sm"

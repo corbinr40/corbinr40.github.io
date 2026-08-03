@@ -1,20 +1,20 @@
 # corbinr40.github.io
 
-Personal portfolio site for Corbin Richardson — software developer, game dev, and 3D artist.
+Personal portfolio site for Corbin Richardson - software developer, game dev, and 3D artist.
 
 **Live site:** https://corbinr40.github.io
 
 ## Tech Stack
 
-- **React 19** + **TypeScript** — UI framework
-- **Vite 6** — Build tool
-- **Bootstrap 5** + **SCSS** — Styling with light/dark theme support
-- **MDX** — Content format (Markdown + JSX)
-- **GitHub Pages** — Hosting via GitHub Actions
+- **React 19** + **TypeScript** - UI framework
+- **Vite 6** - Build tool
+- **Bootstrap 5** + **SCSS** - Styling with light/dark theme support
+- **MDX** - Content format (Markdown + JSX)
+- **GitHub Pages** - Hosting via GitHub Actions
 
 ## Content System
 
-Content is authored as `.mdx` files with YAML frontmatter. Adding a new project or blog post means creating one file — no routing or data file changes needed.
+Content is authored as `.mdx` files with YAML frontmatter. Adding a new project or blog post means creating one file with no routing or data file changes needed.
 
 ```
 src/content/

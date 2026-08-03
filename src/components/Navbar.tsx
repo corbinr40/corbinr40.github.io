@@ -103,7 +103,7 @@ export default function Navbar() {
         />
       </div>
 
-      {/* Hamburger toggle — visible only on small screens */}
+      {/* Hamburger toggle - visible only on small screens */}
       <button
         type="button"
         className="navbar-arc__hamburger"

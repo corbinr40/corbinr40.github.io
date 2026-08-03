@@ -14,7 +14,7 @@ import {
 } from '../../types/editor';
 
 // ---------------------------------------------------------------------------
-// YAML-like frontmatter parsing (not a full YAML parser — handles the
+// YAML-like frontmatter parsing (not a full YAML parser - handles the
 // subset produced by mdxGenerator.ts)
 // ---------------------------------------------------------------------------
 
@@ -177,7 +177,7 @@ function parseCarouselExports(body: string): CarouselExportMap {
     const varName = m[1];
     let jsonStr = m[2];
     // The generator uses JSON.stringify so values are double-quoted,
-    // but hand-written MDX might use single quotes — normalise.
+    // but hand-written MDX might use single quotes - normalise.
     jsonStr = jsonStr.replace(/'/g, '"');
     try {
       const parsed = JSON.parse(jsonStr) as CarouselImage[];
@@ -256,7 +256,7 @@ function parseBlocks(
   // Remove carousel export statements so they don't interfere with block matching
   const cleaned = body.replace(/export\s+const\s+\w+\s*=\s*\[[\s\S]*?\];/g, '');
 
-  // We match known component tags. Order matters — try more specific patterns first.
+  // We match known component tags. Order matters - try more specific patterns first.
   // We'll iterate through the string finding component tags.
   const componentPatterns: {
     name: string;

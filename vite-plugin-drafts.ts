@@ -3,7 +3,7 @@ import type { Plugin } from 'vite';
 /**
  * During production builds, replaces any MDX module whose frontmatter contains
  * `visible: false` with an empty stub, so draft content never enters the
- * public bundle. Dev server is untouched — drafts render normally for preview.
+ * public bundle. Dev server is untouched - drafts render normally for preview.
  *
  * The regex intentionally matches vite-plugin-sitemap.ts so the two plugins
  * can never disagree about what counts as a draft.

@@ -22,8 +22,8 @@ export default function PrivacyPolicy() {
               Cloudflare Web Analytics
             </a>{' '}
             to understand how the site is used. It is cookieless by design: it collects
-            anonymous, aggregated statistics — page views, referrers, country-level
-            location, and page performance timings — without cookies, without storing
+            anonymous, aggregated statistics (page views, referrers, country-level
+            location, and page performance timings) without cookies, without storing
             anything in your browser, and without any persistent identifier that could
             follow you between visits or across other sites.
           </p>
@@ -58,22 +58,22 @@ export default function PrivacyPolicy() {
           <p>
             The site links out to third-party services such as GitHub, LinkedIn, and
             Itch.io. Once you follow a link, you are on their site under their privacy
-            policy — I have no control over, and no responsibility for, what they do
+            policy. I have no control over, and no responsibility for, what they do
             with your data.
           </p>
 
           <h2 className="mt-4">Contact</h2>
           <p>
-            The contact page is a plain email link — there are no forms, and nothing is
+            The contact page is a plain email link as there are no forms, and nothing is
             submitted through this site. If you email me at{' '}
-            <a href="mailto:corbinr40@live.com">corbinr40@live.com</a>, I will use your
+            <a href="mailto:policy@corbinr40.com">policy@corbinr40.com</a>, I will use your
             address only to reply and will not share it with anyone.
           </p>
 
           <h2 className="mt-4">Changes to This Policy</h2>
           <p>
-            If the site's behaviour changes — for example, if I add a service that
-            processes personal data — this page will be updated to describe it before
+            If the site's behaviour changes, for example if I add a service that
+            processes personal data, this page will be updated to describe it before
             the change goes live.
           </p>
         </div>

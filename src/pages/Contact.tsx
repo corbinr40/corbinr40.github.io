@@ -24,7 +24,7 @@ export default function Contact() {
                 />
                 <h5 className="card-title">Email</h5>
                 <a
-                  href="mailto:corbinr40@live.com"
+                  href="mailto:contact@corbinr40.com"
                   className="btn btn-outline-secondary mt-2"
                 >
                   <i className="bi bi-envelope me-2" />

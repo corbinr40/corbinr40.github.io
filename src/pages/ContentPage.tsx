@@ -71,7 +71,7 @@ export default function ContentPage() {
         <div className="container px-4 pt-3">
           <div className="alert alert-warning py-2 mb-0" role="alert">
             <i className="bi bi-eye-slash me-2" />
-            Draft — excluded from production builds
+            Draft - excluded from production builds
           </div>
         </div>
       )}

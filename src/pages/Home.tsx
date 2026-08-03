@@ -60,7 +60,7 @@ export default function Home() {
               fontWeight: 500,
             }}
           >
-            <span
+            {/* <span
               className="pulse-dot"
               style={{
                 width: '7px',
@@ -69,13 +69,13 @@ export default function Home() {
                 backgroundColor: '#22c55e',
                 display: 'inline-block',
               }}
-            />
+            /> */}
             Open to select freelance projects
           </span>
         </div>
 
         <HeroSection
-          title="Hey, I'm Corbin"
+          title="Hey, I'm Corbin!"
           subtitle="Software Engineer · Python · React/TypeScript · AWS · Open to Freelance"
           paragraphs={heroParagraphs}
         />
@@ -118,7 +118,7 @@ export default function Home() {
 
       <hr className="section-divider" />
 
-      {/* Programs — sticky sidebar on the left */}
+      {/* Programs - sticky sidebar on the left */}
       <ProjectSection
         id="programs"
         title="Programs"
@@ -137,7 +137,7 @@ export default function Home() {
         <>
           <hr className="section-divider" />
 
-          {/* Games — sticky sidebar on the right */}
+          {/* Games - sticky sidebar on the right */}
           <ProjectSection
             id="games"
             title="Games"
