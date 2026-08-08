@@ -41,3 +41,18 @@ jobs:
     steps:
       - id: deployment
         uses: actions/deploy-pages@v4
+
+      # The Pages custom domain lives in repo settings, not in the artifact
+      # (CNAME files are ignored by actions/deploy-pages). Re-assert it every
+      # deploy so it can never silently drop back to corbinr40.github.io.
+      - name: Ensure custom domain
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          current=$(gh api "repos/${{ github.repository }}/pages" --jq '.cname // empty')
+          if [ "$current" != "corbinr40.com" ]; then
+            gh api -X PUT "repos/${{ github.repository }}/pages" -f cname=corbinr40.com
+            echo "Custom domain was '$current' — reset to corbinr40.com"
+          else
+            echo "Custom domain intact: corbinr40.com"
+          fi
