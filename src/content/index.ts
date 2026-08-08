@@ -240,9 +240,9 @@ export const skillsets: { title: string; skills: SkillEntry[] }[] = [
     { name: 'PostgreSQL', level: 'proficient' }, { name: 'TimescaleDB', level: 'familiar' },
     { name: 'MySQL', level: 'familiar' }, { name: 'SQLite' },
   ]},
-  { title: 'Programs', skills: [
-    { name: 'KiCad', level: 'familiar' },
-  ]},
+  // { title: 'Programs', skills: [
+  //   { name: 'KiCad', level: 'familiar' },
+  // ]},
   { title: 'Operating Systems', skills: [
     { name: 'Windows' }, { name: 'macOS' }, { name: 'Linux' },
   ]},
