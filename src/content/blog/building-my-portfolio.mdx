@@ -1,70 +1,135 @@
 ---
 id: "building-my-portfolio"
 title: "Building My Portfolio Site"
-description: "How a \"quick rebuild\" of my portfolio turned into an MDX content system, a custom block editor, and a blog I'm now writing in. In that order."
-skills:
-  - "react"
-  - "ts"
-image: "/assets/icon256.png"
+description: 'How a "quick rebuild" of my portfolio turned into a custom MDX content system, with a custom block editor, and a blog I''m now writing in. In that order.'
 contentType: "blog"
 visible: true
-date: "2026-04-15"
+image: "/assets/icon256.png"
+date: "2026-08-05"
 tags:
   - "web development"
   - "react"
   - "portfolio"
+skills:
+  - "react"
+  - "ts"
 ---
 
 <div className="section-wrapper">
   <HeroSection
     title="Building My Portfolio Site"
-    paragraphs={["I sat down to do a small refresh on my portfolio. A new coat of paint, maybe a dark mode toggle, nothing ambitious. Several weekends later I had built a full content management system with a drag-and-drop block editor and an MDX-based content pipeline. This is the story of how a 30-minute job turned into a side project of its own."]}
+    paragraphs={[
+      "One day in April (2026) I wanted to overhaul my portfolio. It hadn't been updated since I left Uni 3 years ago (Really?! That long?!), there were old art projects, half started ideas, the idea of wanting to be a game developer, and worst of all, half written pages. And probably the worst crime of all, it was only in Light Mode!",
+      "So I thought I'd give the site a clean up, a new coat of paint, and a dark colour scheme, with possibly a toggle for those who like a Light Mode. Well, several months later I launched a full content management system with a drag-and-drop block editor and an MDX-based content pipeline.",
+      "So, this is the story of how an hour long job turned into a project of its own.",
+    ]}
+    imageSrc=""
+    imageAlt=""
   />
 </div>
 
 <div className="section-wrapper">
-  <FeatureSection title="The Stack">
-    <p>The site is built with <b>React 19</b>, <b>TypeScript</b>, and <b>Bootstrap 5</b>, bundled with <b>Vite</b>. Content is written in <b>MDX</b>, which is basically Markdown that has learned how to host React components inside itself. It sounds like overkill until you try to put an image carousel into a blog post and realise plain Markdown wants no part of that.</p>
-    <p>Everything is hosted on <b>GitHub Pages</b> and deployed automatically when I push to main. No server, no database, no surprise bills at the end of the month.</p>
+  <FeatureSection title="The Stack" imageSrc="" imageAlt="" imageCaption="">
+    <p>The site is built with <strong>React 19</strong>, <strong>TypeScript</strong>, and <strong>Bootstrap 5</strong>, bundled with <strong>Vite</strong>. Content, the projects and blog posts, are written in <strong>MDX</strong>, which is basically a Markdown file on steroids. It sounds like overkill until you try to put an image carousel into a blog post and realise plain Markdown wants no part of that.</p>
+    <p>Everything is hosted on <strong>GitHub Pages</strong> and deployed automatically when I push to main. No server, no database, no surprise bills at the end of the month.</p>
   </FeatureSection>
 </div>
 
 <div className="section-wrapper">
-  <FeatureSection title="The Content System">
-    <p>The original version of this site had every project page as its own hand-written React component. It worked, but it meant that adding a new project was a four-file job: a new page component, a new route, a new entry in the data file, and usually some CSS tweaks. Not hard, just annoying enough that I kept putting off writing new projects.</p>
-    <p>The rebuild swapped all of that out for a single pattern: every project and blog post is one <code>.mdx</code> file. The top of the file has YAML frontmatter (title, date, tags, that kind of thing) and the rest is MDX, which means I can drop in React components wherever I want. A content registry picks up every <code>.mdx</code> file at build time and wires up routing automatically. Adding a new project is now a one-file job. Writing this post took longer than the code would have.</p>
+  <FeatureSection
+    title="The History of corbinr40.com"
+    imageSrc=""
+    imageAlt=""
+    imageCaption=""
+  >
+    <p>The first original version of this site was a Squarespace hosted site with drag-and-drop block to design everything. This I found very limiting to get the layout and design I want, but I cracked on with it and got something that looked half decent.</p>
+    <p>Just under a year passed since the site was up and I got an email. This email was the yearly cost of the £120 and as a broke Uni student, and even now as a broke full time employee, that was too much money! So I started looking into alternatives. I read up that people have used <a target="_blank" rel="noopener noreferrer" href="https://pages.github.com"><strong>GitHub Pages</strong></a> to host their free sites, so I started looking into that. As a Software Engineer I thought I should probably make something myself, so I typed out my portfolio using <strong>HTML</strong>, <strong>JavaScript</strong>, <strong>CSS </strong>(well, Bootstrap).</p>
+    <p>After I finished rewriting/recreating the site, I pushed it live but was never all that happy with how it looked. I remember creating a "template" page which I could use to quickly write up the projects I've completed but it was so annoying dealing with the RAW HTML files.</p>
+    <p>After losing my job in February 2025, I kept telling myself to remake my website with something I was proud of but I could never bring myself to doing as I needed to focus on getting a new job. But I was coming up with ideas of what I'd like my site to have, to look like, and, more importantly, to easily add content. It was only a few months... maybe a year later that I finally started working on the revamp.</p>
+    <p>The first plan was to use <strong>Jekyll </strong>with GitHub Pages, to help with the idea of "easily adding content" but I wanted to also use React as I was actively using it at work so it would help better my skills. So I switched to that idea.</p>
+    <p>So this site was going to have every project page as its own hand-written <strong>React </strong>component. It was working, but it meant that adding a new project was a four-file job: a new page component, a new route, a new entry in the data file, and usually some CSS tweaks. Not hard, just annoying enough that I knew would've put me off writing new projects.</p>
+    <p>So I decided to merge the two ideas of <strong>Jekyll </strong>and <strong>React </strong>together. This is was created the "Content System" overhaul.</p>
+    <p></p>
+  </FeatureSection>
+</div>
+
+<div className="section-wrapper">
+  <FeatureSection
+    title="The Content System"
+    imageSrc=""
+    imageAlt=""
+    imageCaption=""
+  >
+    <p>The new idea was to have a single Markdown (MD) file where I could have tagged sections and type out the content to be rendered on the page. In my research on how to do this, I stumbled across MDX files which can allow JSX content to be embedded and used with in MD files, this made it much easier to make components to ensure consistency throughout website.</p>
+    <p>Each project and blog post is one <code>.mdx</code> file. The top of the file has YAML frontmatter (title, date, tags, that kind of thing) and the rest is MDX, which means I can drop in React components wherever I want. A content registry picks up every <code>.mdx</code> file at build time and wires up routing automatically. Adding a new project is now a one-file job. Writing this post took longer than the code would have.</p>
     <p>The system supports ten different content block types out of the box:</p>
     <ul>
-      <li>Hero sections with an image and intro text</li>
-      <li>An automatic overview table that reads from frontmatter</li>
-      <li>Feature sections (basically "heading + content", the workhorse block)</li>
-      <li>Image carousels for showing off multiple shots</li>
-      <li>Image-with-paragraph layouts (left or right aligned)</li>
-      <li>Code blocks with syntax highlighting</li>
-      <li>Video embeds for YouTube and Vimeo</li>
-      <li>Callout boxes for info, warnings, or tips</li>
-      <li>Pull quotes for when you want to be dramatic</li>
-      <li>Description lists for term-and-definition content</li>
+      <li>
+        <p>Hero sections with an image and intro text</p>
+      </li>
+      <li>
+        <p>An automatic overview table that reads from frontmatter</p>
+      </li>
+      <li>
+        <p>Feature sections (basically "heading + content", the workhorse block)</p>
+      </li>
+      <li>
+        <p>Image carousels for showing off multiple shots</p>
+      </li>
+      <li>
+        <p>Image-with-paragraph layouts (left or right aligned)</p>
+      </li>
+      <li>
+        <p>Code blocks with syntax highlighting</p>
+      </li>
+      <li>
+        <p>Video embeds for YouTube and Vimeo</p>
+      </li>
+      <li>
+        <p>Callout boxes for info, warnings, or tips</p>
+      </li>
+      <li>
+        <p>Pull quotes for when you want to be dramatic</p>
+      </li>
+      <li>
+        <p>Description lists for term-and-definition content</p>
+      </li>
     </ul>
+    <p></p>
   </FeatureSection>
 </div>
 
 <div className="section-wrapper">
-  <FeatureSection title="The Editor">
+  <FeatureSection title="The Editor" imageSrc="" imageAlt="" imageCaption="">
     <p>At this point I should have stopped. The MDX system worked. I could write new posts. Job done.</p>
-    <p>Instead, I built a full block-based editor at <code>/editor</code>. It works a bit like Notion or WordPress Gutenberg: drag-and-drop blocks, a rich text editor on top of TipTap, live preview using the actual site components, image uploads, draft management with auto-save to IndexedDB, and the ability to publish directly to my GitHub repo via the Contents API. When I hit "Publish" on a new post, it creates a commit, pushes it, and GitHub Actions redeploys the site. End to end, writing and shipping a post takes about as long as it takes to drink a coffee.</p>
-    <p>The editor is lazy-loaded and hidden from search engines, so regular visitors pay no cost for its existence. But it's there if I need it, and it's saved me from the traditional blogger's dilemma of "I have a thing to write about but I can't be bothered to open my IDE to do it".</p>
+    <p>But instead, I built a full block-based editor that runs locally to write these projects and blogs. It works a bit like other blogpost software with: drag-and-drop blocks, a rich text editor on top of TipTap, live preview using the actual site components, image uploads, draft management with auto-save to IndexedDB, and the ability to publish directly to my GitHub repo via the Contents API.</p>
+    <p>When I hit "Publish" on a new post, it creates a commit, pushes it, and GitHub Actions redeploys the site. End to end, writing and shipping a post takes about as long as it takes to drink a coffee... or maybe two if I'm taking my time</p>
   </FeatureSection>
 </div>
 
 <div className="section-wrapper">
-  <FeatureSection title="What's Next">
-    <p>Now that the plumbing is done, the rest of this site is mostly a content problem rather than a code problem. The things I actually want to do:</p>
+  <FeatureSection title="What's Next" imageSrc="" imageAlt="" imageCaption="">
+    <p>Now that the site is complete, the rest of this site is mostly a content problem rather than a code problem. The things I actually want to do:</p>
     <ul>
-      <li>Finish the project write-ups for my game jam entries</li>
-      <li>Build out dedicated pages for my 3D models, probably with embedded Sketchfab viewers</li>
-      <li>Write more of these. I have opinions about software and I may as well share them.</li>
+      <li>
+        <p>Finish the write ups for my dev projects</p>
+      </li>
+      <li>
+        <p>Finish the write ups for my game jam entries</p>
+      </li>
+      <li>
+        <p>Build out dedicated pages for my 3D models, probably with embedded Sketchfab viewers</p>
+      </li>
+      <li>
+        <p>Write more of these. </p>
+      </li>
+      <li>
+        <p>Write out how my projects are going, keep a central location of what's going on with me.</p>
+      </li>
+      <li>
+        <p>And possibly join the conversation with current things going on within the tech circle.</p>
+      </li>
     </ul>
-    <p>The whole thing is open source. If you're curious how any of this works, the code is on my <a href="https://github.com/corbinr40/corbinr40.github.io"><u>GitHub</u></a>.</p>
+    <p>The whole thing is open source. If you're curious how any of this works, the code is on my <a target="_blank" rel="noopener noreferrer" href="https://github.com/corbinr40/corbinr40.github.io"><u>GitHub</u></a>.</p>
   </FeatureSection>
 </div>
