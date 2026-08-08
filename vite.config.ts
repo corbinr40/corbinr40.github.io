@@ -5,6 +5,7 @@ import remarkFrontmatter from 'remark-frontmatter'
 import remarkMdxFrontmatter from 'remark-mdx-frontmatter'
 import sitemap from './vite-plugin-sitemap'
 import drafts from './vite-plugin-drafts'
+import rss from './vite-plugin-rss'
 
 export default defineConfig({
   plugins: [
@@ -17,6 +18,7 @@ export default defineConfig({
     }),
     react(),
     sitemap(),
+    rss(),
   ],
   base: '/',
   css: {

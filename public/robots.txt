@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /rss
 
 Sitemap: https://corbinr40.com/sitemap.xml
