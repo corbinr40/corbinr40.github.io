@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import HeroSection from '../components/HeroSection';
 import SkillCard from '../components/SkillCard';
@@ -46,19 +47,10 @@ export default function Home() {
       <div className="container px-4 py-5">
         {/* Availability badge */}
         <div className="mb-3">
-          <span
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '6px',
-              backgroundColor: 'rgba(34, 197, 94, 0.15)',
-              border: '1px solid rgba(34, 197, 94, 0.4)',
-              color: '#22c55e',
-              borderRadius: '999px',
-              padding: '4px 14px',
-              fontSize: '0.8rem',
-              fontWeight: 500,
-            }}
+          <Link
+            to="/contact"
+            className="availability-badge"
+            aria-label="Contact me about freelance work"
           >
             {/* <span
               className="pulse-dot"
@@ -70,8 +62,8 @@ export default function Home() {
                 display: 'inline-block',
               }}
             /> */}
-            Open to select freelance projects
-          </span>
+            Available for freelance projects
+          </Link>
         </div>
 
         <HeroSection
