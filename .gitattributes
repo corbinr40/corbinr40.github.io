@@ -1,0 +1,17 @@
+# Normalize all text files to LF in the repo AND the working tree, so
+# Windows-side tools (VS Code, git.exe) and WSL git agree on line endings.
+* text=auto eol=lf
+
+# Binary assets — never touch line endings
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.webp binary
+*.ico binary
+*.woff binary
+*.woff2 binary
+*.ttf binary
+*.eot binary
+*.pdf binary
+*.zip binary
