@@ -49,11 +49,14 @@ path {
 
 
 .btn-primary {
-  --bs-btn-color: #fff;
+  // Inverted per theme: page-background text on text-coloured fill, so the
+  // selected state stays readable in both light (#fff on #111) and dark
+  // (#121212 on #e0e0e0) themes. Hardcoded #fff broke dark mode.
+  --bs-btn-color: var(--color-bg-primary);
   --bs-btn-bg: var(--color-btn-border);
   --bs-btn-border-color: var(--color-btn-border);
-  --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: var(--color-bg-secondary);
+  --bs-btn-hover-color: var(--color-bg-primary);
+  --bs-btn-hover-bg: var(--color-btn-hover-border);
   --bs-btn-hover-border-color: var(--color-btn-hover-border);
   --bs-btn-focus-shadow-rgb: 49, 132, 253;
   --bs-btn-active-color: var(--color-text-primary);
