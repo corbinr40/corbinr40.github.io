@@ -27,7 +27,9 @@ function generateFrontmatter(fm: Frontmatter): string {
   lines.push(`description: ${yamlValue(fm.description)}`);
   lines.push(`contentType: ${yamlValue(fm.contentType)}`);
   lines.push(`visible: ${fm.visible}`);
-  lines.push(`cardImage: ${yamlValue(fm.cardImage)}`);
+  // Serialized as "image" — the site's content registry (src/content/index.ts)
+  // and all existing MDX use that key; "cardImage" is editor-internal only.
+  lines.push(`image: ${yamlValue(fm.cardImage)}`);
 
   if (fm.contentType === 'blog') {
     const b = fm as BlogFrontmatter;

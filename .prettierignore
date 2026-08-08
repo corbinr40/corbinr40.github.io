@@ -1,0 +1,5 @@
+# Never let Prettier reformat MDX content: it wraps inline JSX tags
+# (<a>, <strong>) onto their own lines, and MDX parses line-initial tags
+# as block-level elements — visibly splitting paragraphs on the rendered
+# site. See docs/superpowers/specs — editor bug fix 2026-08-08.
+*.mdx
