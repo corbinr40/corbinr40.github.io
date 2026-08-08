@@ -72,7 +72,7 @@ export default function BlogList() {
                 className={`btn btn-sm ${activeTag === tag ? 'btn-primary' : 'btn-outline-primary'}`}
                 onClick={() => setActiveTag(tag)}
               >
-                {tag}
+                {tag[0].toUpperCase() + tag.slice(1)}
               </button>
             ))}
           </div>
